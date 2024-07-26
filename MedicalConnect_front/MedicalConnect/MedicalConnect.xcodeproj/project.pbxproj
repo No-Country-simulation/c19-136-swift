@@ -10,8 +10,10 @@
 		702B37472C543B3E003BF42D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702B37462C543B3D003BF42D /* Montserrat-Regular.ttf */; };
 		702B374B2C543D84003BF42D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702B374A2C543D84003BF42D /* Montserrat-Bold.ttf */; };
 		702B374D2C543D8F003BF42D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702B374C2C543D8F003BF42D /* Montserrat-SemiBold.ttf */; };
+		702B37512C54581A003BF42D /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B37502C54581A003BF42D /* MainButtonStyle.swift */; };
+		702B37532C545B34003BF42D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B37522C545B33003BF42D /* OnboardingView.swift */; };
 		703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */; };
-		703AE8EA2C52A16F007FEC4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E92C52A16F007FEC4C /* ContentView.swift */; };
+		703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E92C52A16F007FEC4C /* StartingView.swift */; };
 		703AE8EC2C52A172007FEC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EB2C52A172007FEC4C /* Assets.xcassets */; };
 		703AE8EF2C52A172007FEC4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EE2C52A172007FEC4C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -21,9 +23,11 @@
 		702B37492C543D5F003BF42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		702B374A2C543D84003BF42D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		702B374C2C543D8F003BF42D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		702B37502C54581A003BF42D /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
+		702B37522C545B33003BF42D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		703AE8E42C52A16F007FEC4C /* MedicalConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConnectApp.swift; sourceTree = "<group>"; };
-		703AE8E92C52A16F007FEC4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		703AE8E92C52A16F007FEC4C /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		703AE8EB2C52A172007FEC4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703AE8EE2C52A172007FEC4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +46,7 @@
 		702B37452C543941003BF42D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				702B37502C54581A003BF42D /* MainButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -78,10 +83,11 @@
 				702B37492C543D5F003BF42D /* Info.plist */,
 				702B37452C543941003BF42D /* Components */,
 				703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */,
-				703AE8E92C52A16F007FEC4C /* ContentView.swift */,
+				703AE8E92C52A16F007FEC4C /* StartingView.swift */,
 				703AE8EB2C52A172007FEC4C /* Assets.xcassets */,
 				702B37482C543CC8003BF42D /* Fonts */,
 				703AE8ED2C52A172007FEC4C /* Preview Content */,
+				702B37522C545B33003BF42D /* OnboardingView.swift */,
 			);
 			path = MedicalConnect;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703AE8EA2C52A16F007FEC4C /* ContentView.swift in Sources */,
+				703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */,
+				702B37532C545B34003BF42D /* OnboardingView.swift in Sources */,
 				703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */,
+				702B37512C54581A003BF42D /* MainButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
