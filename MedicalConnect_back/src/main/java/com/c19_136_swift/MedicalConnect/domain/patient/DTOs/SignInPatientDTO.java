@@ -1,0 +1,29 @@
+package com.c19_136_swift.MedicalConnect.domain.patient.DTOs;
+
+import com.c19_136_swift.MedicalConnect.domain.patient.Gender;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDate;
+
+public record SignInPatientDTO(
+        @NotBlank
+        String name,
+        @NotBlank
+        @Email
+        String email,
+        @NotBlank
+        String password,
+        @NotNull
+        String phone,
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+        @NotNull
+        LocalDate birthdate,
+
+        String allergies,
+        @NotNull
+        String gender
+) {
+}
