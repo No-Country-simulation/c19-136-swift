@@ -14,6 +14,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+                .font(Font.custom("Montserrat-SemiBold", size: 32, relativeTo: .title))
         }
         .padding()
     }
