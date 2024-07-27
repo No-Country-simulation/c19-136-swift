@@ -22,6 +22,7 @@ struct TextFieldDataView: View {
                 .keyboardType(keyboard)
                 .autocorrectionDisabled()
                 .textFieldStyle(RoundedTextFieldStyle())
+               
         }
         .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 10))
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -41,7 +42,7 @@ struct RoundedTextFieldStyle: TextFieldStyle {
         configuration
            
             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-            .foregroundStyle(.babyBlue100)
+            .foregroundStyle(.black)
             .font(Font.custom("Montserrat-Regular", size: 14))
             .padding(8)
             .background(border)

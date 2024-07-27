@@ -12,8 +12,12 @@ struct OnboardingView: View {
     var body: some View {
         
         NavigationStack {
-
-                VStack{
+            
+            ZStack {
+                ScrollView {
+                    
+               
+                    
                     Image("LOGO")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -72,13 +76,22 @@ struct OnboardingView: View {
 
                     
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(content: {
                     LinearGradient(gradient: Gradient(colors:[Color("babyBlue-100"), Color("babyBlue-200")]), startPoint: .top, endPoint: .bottom)
                 })
                 .ignoresSafeArea()
             
+          
+               
+                
+          
+
+            
+
+            
         }
+
        
     }
 }

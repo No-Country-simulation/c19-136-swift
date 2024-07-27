@@ -9,15 +9,17 @@ import SwiftUI
 
 struct StartingView: View {
     @State private var nextViewButton: Bool = false
+    @State private var isLandscape: Bool = UIDevice.current.orientation.isLandscape
     var body: some View {
         
         NavigationStack {
-            VStack(spacing: 150) {
+            VStack(spacing: isLandscape ? 20 : 150) {
                 
                 VStack{
                     Image("LOGO")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .scaledToFit()
+                        //.aspectRatio(contentMode: .fit)
                        
                 }
                 
@@ -35,6 +37,7 @@ struct StartingView: View {
                         .kerning(1.2)
                 })
                 .buttonStyle(MainButtonStyle(isEnabled: true))
+                .padding(.bottom,20)
                
             }
             
@@ -50,6 +53,9 @@ struct StartingView: View {
             .ignoresSafeArea()
                 
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification), perform: { _ in
+            isLandscape = UIDevice.current.orientation.isLandscape
+        })
     }
 }
 
