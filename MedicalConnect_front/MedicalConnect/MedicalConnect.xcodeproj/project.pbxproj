@@ -24,6 +24,10 @@
 		703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E92C52A16F007FEC4C /* StartingView.swift */; };
 		703AE8EC2C52A172007FEC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EB2C52A172007FEC4C /* Assets.xcassets */; };
 		703AE8EF2C52A172007FEC4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EE2C52A172007FEC4C /* Preview Assets.xcassets */; };
+		70D55B4C2C5568FD0025D84D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D55B4B2C5568FD0025D84D /* HeaderView.swift */; };
+		70D55B4E2C556A1D0025D84D /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D55B4D2C556A1D0025D84D /* ConfigView.swift */; };
+		70D55B502C556A360025D84D /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D55B4F2C556A360025D84D /* MyProfileView.swift */; };
+		70D55B522C556FAA0025D84D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D55B512C556FAA0025D84D /* MainTabView.swift */; };
 		70FBEF432C54C2D2004FDA53 /* UserSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF422C54C2D1004FDA53 /* UserSignupFormView.swift */; };
 		70FBEF472C54C72B004FDA53 /* DoctorSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */; };
 		70FBEF492C54CA14004FDA53 /* PatientSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */; };
@@ -31,6 +35,8 @@
 		70FBEF4D2C54D007004FDA53 /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF4C2C54D007004FDA53 /* Allergies.swift */; };
 		70FBEF4F2C54D19B004FDA53 /* BigFrameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF4E2C54D19B004FDA53 /* BigFrameTextFieldView.swift */; };
 		70FBEF512C54DDF7004FDA53 /* MedicalSpeality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF502C54DDF7004FDA53 /* MedicalSpeality.swift */; };
+		70FBEF532C54E1E1004FDA53 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF522C54E1E1004FDA53 /* HomeView.swift */; };
+		70FBEF552C54E640004FDA53 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF542C54E640004FDA53 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +59,10 @@
 		703AE8E92C52A16F007FEC4C /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		703AE8EB2C52A172007FEC4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703AE8EE2C52A172007FEC4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70D55B4B2C5568FD0025D84D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		70D55B4D2C556A1D0025D84D /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		70D55B4F2C556A360025D84D /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		70D55B512C556FAA0025D84D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		70FBEF422C54C2D1004FDA53 /* UserSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSignupFormView.swift; path = MedicalConnect/Users/UserSignupFormView.swift; sourceTree = SOURCE_ROOT; };
 		70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSignupFormView.swift; sourceTree = "<group>"; };
 		70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignupFormView.swift; sourceTree = "<group>"; };
@@ -60,6 +70,8 @@
 		70FBEF4C2C54D007004FDA53 /* Allergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
 		70FBEF4E2C54D19B004FDA53 /* BigFrameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigFrameTextFieldView.swift; sourceTree = "<group>"; };
 		70FBEF502C54DDF7004FDA53 /* MedicalSpeality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSpeality.swift; sourceTree = "<group>"; };
+		70FBEF522C54E1E1004FDA53 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		70FBEF542C54E640004FDA53 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,9 @@
 				702B37632C549D80003BF42D /* UpperFrame.swift */,
 				702B37652C549F8A003BF42D /* UIDeviceOrientation.swift */,
 				70FBEF4E2C54D19B004FDA53 /* BigFrameTextFieldView.swift */,
+				70FBEF542C54E640004FDA53 /* SearchBarView.swift */,
+				70D55B4B2C5568FD0025D84D /* HeaderView.swift */,
+				70D55B512C556FAA0025D84D /* MainTabView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -120,6 +135,9 @@
 				703AE8E92C52A16F007FEC4C /* StartingView.swift */,
 				702B37522C545B33003BF42D /* OnboardingView.swift */,
 				702B37612C549C9F003BF42D /* SignUpView.swift */,
+				70FBEF522C54E1E1004FDA53 /* HomeView.swift */,
+				70D55B4D2C556A1D0025D84D /* ConfigView.swift */,
+				70D55B4F2C556A360025D84D /* MyProfileView.swift */,
 			);
 			name = MainViews;
 			path = Components/MainViews;
@@ -291,14 +309,20 @@
 				703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */,
 				702B37662C549F8A003BF42D /* UIDeviceOrientation.swift in Sources */,
 				702B37592C54807E003BF42D /* SecurityFieldTextFieldData.swift in Sources */,
+				70D55B4C2C5568FD0025D84D /* HeaderView.swift in Sources */,
 				70FBEF512C54DDF7004FDA53 /* MedicalSpeality.swift in Sources */,
 				70FBEF432C54C2D2004FDA53 /* UserSignupFormView.swift in Sources */,
 				702B375F2C548FAA003BF42D /* SignInWithAppleButtonStyle.swift in Sources */,
+				70FBEF552C54E640004FDA53 /* SearchBarView.swift in Sources */,
 				702B37552C546911003BF42D /* TextFieldDataView.swift in Sources */,
 				70FBEF4D2C54D007004FDA53 /* Allergies.swift in Sources */,
 				702B37642C549D80003BF42D /* UpperFrame.swift in Sources */,
+				70FBEF532C54E1E1004FDA53 /* HomeView.swift in Sources */,
+				70D55B502C556A360025D84D /* MyProfileView.swift in Sources */,
 				702B37572C547CA2003BF42D /* TextFieldSecurityView.swift in Sources */,
 				702B37692C54BA95003BF42D /* TypeOfUsers.swift in Sources */,
+				70D55B522C556FAA0025D84D /* MainTabView.swift in Sources */,
+				70D55B4E2C556A1D0025D84D /* ConfigView.swift in Sources */,
 				70FBEF4B2C54CB48004FDA53 /* Gender.swift in Sources */,
 				702B37622C549C9F003BF42D /* SignUpView.swift in Sources */,
 				702B37512C54581A003BF42D /* MainButtonStyle.swift in Sources */,
