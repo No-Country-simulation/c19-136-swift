@@ -21,7 +21,7 @@ struct UserSignupFormView: View {
                 .padding(.bottom, 12)
             
             TextFieldSecurityView(label: "Repite Contraseña", prompt: "Repite tu contraseña", keyboard: .asciiCapable)
-                .padding(.bottom, 12)
+                .padding(.bottom, 32)
             
             Button(action: {
                 print("Registrar")
