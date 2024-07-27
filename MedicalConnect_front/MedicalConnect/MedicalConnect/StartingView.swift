@@ -12,12 +12,19 @@ struct StartingView: View {
     var body: some View {
         
         NavigationStack {
-            VStack {
+            VStack(spacing: 150) {
                 
-                Image("LOGO")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                VStack{
+                    Image("LOGO")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                       
+                }
+                
 
+                
+             
+            
 
                 Button(action: {
                     nextViewButton = true
