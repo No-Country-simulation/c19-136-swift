@@ -44,7 +44,7 @@ struct MainTabView: View {
             UITabBar.appearance().barTintColor = UIColor.gray
           }
        
-        .tint(.white)
+        .tint(.babyBlue200)
        
         
 
