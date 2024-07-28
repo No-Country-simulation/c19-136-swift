@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Doctors: Hashable, Identifiable {
-    let id: ObjectIdentifier
+struct Doctor: Hashable, Identifiable {
+    let id: UUID = UUID()
     let name: String
     let email: String
     let password: String
