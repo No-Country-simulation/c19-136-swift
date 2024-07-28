@@ -15,7 +15,8 @@ struct ConfigView: View {
         .init(title: .auth),
         .init(title: .termsAndconditions),
         .init(title:  .privacy),
-        .init(title:  .contact)
+        .init(title:  .contact), 
+        .init(title: .logout)
 
 
     ]
@@ -23,20 +24,23 @@ struct ConfigView: View {
     var body: some View {
         NavigationStack {
             
-       
-            List(configServices) { service in
-                NavigationLink(service.title.rawValue, value: service)
-                    .frame(height:40)
-                }
+   
+         
+                         List(configServices) { service in
+                             NavigationLink(service.title.rawValue, value: service)
+                                 .frame(height:40)
+                           
+                             }
+                         
+                             .navigationTitle("Configuración")
+                             .navigationDestination(for: Services.self, destination: { service in
+                                 Text(service.title.rawValue)
+                             })
+                             
+                             .listStyle(InsetListStyle())
             
-                .navigationTitle("Configuración")
-                .navigationDestination(for: Services.self, destination: { service in
-                    Text(service.title.rawValue)
-                })
-                
-                .listStyle(InsetListStyle())
-            
-
+          
+                    
         }
 
     }

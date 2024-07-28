@@ -22,6 +22,8 @@
 		702B37692C54BA95003BF42D /* TypeOfUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B37682C54BA95003BF42D /* TypeOfUsers.swift */; };
 		703A4ED72C55AE5200ECA09B /* ConfigServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4ED62C55AE5200ECA09B /* ConfigServices.swift */; };
 		703A4ED92C55B1BB00ECA09B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4ED82C55B1BB00ECA09B /* Services.swift */; };
+		703A4EDE2C55C9BC00ECA09B /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EDD2C55C9BC00ECA09B /* Doctors.swift */; };
+		703A4EE22C55CBB800ECA09B /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE12C55CBB800ECA09B /* Patient.swift */; };
 		703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */; };
 		703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E92C52A16F007FEC4C /* StartingView.swift */; };
 		703AE8EC2C52A172007FEC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EB2C52A172007FEC4C /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		702B37682C54BA95003BF42D /* TypeOfUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfUsers.swift; sourceTree = "<group>"; };
 		703A4ED62C55AE5200ECA09B /* ConfigServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigServices.swift; sourceTree = "<group>"; };
 		703A4ED82C55B1BB00ECA09B /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		703A4EDD2C55C9BC00ECA09B /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
+		703A4EE12C55CBB800ECA09B /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		703AE8E42C52A16F007FEC4C /* MedicalConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConnectApp.swift; sourceTree = "<group>"; };
 		703AE8E92C52A16F007FEC4C /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
@@ -156,8 +160,8 @@
 		702B376A2C54C160003BF42D /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				703A4EE02C55CB8100ECA09B /* Models */,
 				702B376D2C54C17B003BF42D /* View */,
-				70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */,
 				70FBEF4A2C54CB48004FDA53 /* Gender.swift */,
 				70FBEF4C2C54D007004FDA53 /* Allergies.swift */,
 			);
@@ -167,6 +171,7 @@
 		702B376D2C54C17B003BF42D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 		703A4ED52C55AE0E00ECA09B /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				703A4EDC2C55C16900ECA09B /* Views */,
 				703A4ED62C55AE5200ECA09B /* ConfigServices.swift */,
 				703A4ED82C55B1BB00ECA09B /* Services.swift */,
 			);
@@ -200,6 +206,29 @@
 			);
 			name = Onbording;
 			path = Home/Onbording;
+			sourceTree = "<group>";
+		};
+		703A4EDC2C55C16900ECA09B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		703A4EDF2C55CB1D00ECA09B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				703A4EDD2C55C9BC00ECA09B /* Doctors.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		703A4EE02C55CB8100ECA09B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				703A4EE12C55CBB800ECA09B /* Patient.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		703AE8DB2C52A16F007FEC4C = {
@@ -245,6 +274,7 @@
 		70FBEF442C54C6AE004FDA53 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
+				703A4EDF2C55CB1D00ECA09B /* Models */,
 				70FBEF452C54C6E8004FDA53 /* View */,
 				70FBEF502C54DDF7004FDA53 /* MedicalSpeality.swift */,
 			);
@@ -339,6 +369,8 @@
 				702B37532C545B34003BF42D /* OnboardingView.swift in Sources */,
 				703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */,
 				702B37662C549F8A003BF42D /* UIDeviceOrientation.swift in Sources */,
+				703A4EE22C55CBB800ECA09B /* Patient.swift in Sources */,
+				703A4EDE2C55C9BC00ECA09B /* Doctors.swift in Sources */,
 				702B37592C54807E003BF42D /* SecurityFieldTextFieldData.swift in Sources */,
 				70D55B4C2C5568FD0025D84D /* HeaderView.swift in Sources */,
 				70FBEF512C54DDF7004FDA53 /* MedicalSpeality.swift in Sources */,

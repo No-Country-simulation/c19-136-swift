@@ -35,8 +35,6 @@ struct MainTabView: View {
                         Label("Configuración", systemImage: "gearshape.2.fill")
                     }
             }
-        
-            
         }
         .onAppear() {
             UITabBar.appearance().backgroundColor = UIColor(named: "mainColor")
