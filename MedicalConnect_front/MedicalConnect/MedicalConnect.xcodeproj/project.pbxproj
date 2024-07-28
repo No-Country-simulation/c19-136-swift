@@ -26,6 +26,7 @@
 		703A4EE22C55CBB800ECA09B /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE12C55CBB800ECA09B /* Patient.swift */; };
 		703A4EE42C55CF1800ECA09B /* DoctorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE32C55CF1800ECA09B /* DoctorRowView.swift */; };
 		703A4EE72C55D97A00ECA09B /* DoctorServicesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE62C55D97A00ECA09B /* DoctorServicesCardView.swift */; };
+		703A4EE92C55EF0F00ECA09B /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE82C55EF0F00ECA09B /* ResultsView.swift */; };
 		703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */; };
 		703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E92C52A16F007FEC4C /* StartingView.swift */; };
 		703AE8EC2C52A172007FEC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EB2C52A172007FEC4C /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		703A4EE12C55CBB800ECA09B /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		703A4EE32C55CF1800ECA09B /* DoctorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorRowView.swift; sourceTree = "<group>"; };
 		703A4EE62C55D97A00ECA09B /* DoctorServicesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorServicesCardView.swift; sourceTree = "<group>"; };
+		703A4EE82C55EF0F00ECA09B /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		703AE8E42C52A16F007FEC4C /* MedicalConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703AE8E72C52A16F007FEC4C /* MedicalConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalConnectApp.swift; sourceTree = "<group>"; };
 		703AE8E92C52A16F007FEC4C /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				70D55B512C556FAA0025D84D /* MainTabView.swift */,
 				70D55B4D2C556A1D0025D84D /* ConfigView.swift */,
 				70FBEF522C54E1E1004FDA53 /* HomeView.swift */,
+				703A4EE82C55EF0F00ECA09B /* ResultsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				702B37572C547CA2003BF42D /* TextFieldSecurityView.swift in Sources */,
 				702B37692C54BA95003BF42D /* TypeOfUsers.swift in Sources */,
 				70D55B522C556FAA0025D84D /* MainTabView.swift in Sources */,
+				703A4EE92C55EF0F00ECA09B /* ResultsView.swift in Sources */,
 				70D55B4E2C556A1D0025D84D /* ConfigView.swift in Sources */,
 				70FBEF4B2C54CB48004FDA53 /* Gender.swift in Sources */,
 				702B37622C549C9F003BF42D /* SignUpView.swift in Sources */,

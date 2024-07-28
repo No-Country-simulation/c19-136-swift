@@ -13,7 +13,7 @@ struct UpperFrame: View {
     var body: some View {
 
         VStack() {
-            HStack(alignment: .bottom) {
+        
                 Text(label)
                         .foregroundStyle(.white)
                         .padding(EdgeInsets(top: 0, leading: 12, bottom: 12, trailing: 0))
@@ -21,10 +21,10 @@ struct UpperFrame: View {
                       
            
                     
-            }
+            
             
         }
-        .frame(height: isLandscape ? 40: 150)
+        .frame(height: isLandscape ? 40: 100)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color("mainColor"))
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification), perform: { _ in

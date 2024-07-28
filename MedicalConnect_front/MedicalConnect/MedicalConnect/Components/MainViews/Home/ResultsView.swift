@@ -1,0 +1,94 @@
+//
+//  ResultsView.swift
+//  MedicalConnect
+//
+//  Created by Dulce Itamar Vigueras Ballesteros on 27/07/24.
+//
+
+import SwiftUI
+
+struct ResultsView: View {
+    
+    let exampleDoctors: [Doctor] = [
+        .init(
+            name: "Josefina Díaz",
+            email: "josefina_diaz112@example.com",
+            password: "123423234",
+            phone: "523221984503",
+            medicalSpecialty: .cardiology,
+            professionalLicense: "8877621A",
+            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+        ),
+        .init(
+            name: "Josefina Díaz",
+            email: "josefina_diaz112@example.com",
+            password: "123423234",
+            phone: "523221984503",
+            medicalSpecialty: .cardiology,
+            professionalLicense: "8877621A",
+            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+        ),
+        .init(
+            name: "Josefina Díaz",
+            email: "josefina_diaz112@example.com",
+            password: "123423234",
+            phone: "523221984503",
+            medicalSpecialty: .cardiology,
+            professionalLicense: "8877621A",
+            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+        ),
+        .init(
+            name: "Josefina Díaz",
+            email: "josefina_diaz112@example.com",
+            password: "123423234",
+            phone: "523221984503",
+            medicalSpecialty: .cardiology,
+            professionalLicense: "8877621A",
+            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+        ),
+        .init(
+            name: "Josefina Díaz",
+            email: "josefina_diaz112@example.com",
+            password: "123423234",
+            phone: "523221984503",
+            medicalSpecialty: .cardiology,
+            professionalLicense: "8877621A",
+            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+        ),
+        .init(
+            name: "Josefina Díaz",
+            email: "josefina_diaz112@example.com",
+            password: "123423234",
+            phone: "523221984503",
+            medicalSpecialty: .cardiology,
+            professionalLicense: "8877621A",
+            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+        )
+    
+    ]
+    var body: some View {
+        VStack {
+            NavigationStack {
+                UpperFrame(label: "Resultados")
+                
+                ScrollView{
+                    ForEach(exampleDoctors, id:\.self){ doctor in
+                        
+                     
+                            DoctorRowView(
+                                name: doctor.name,
+                                medicalSpeciality: doctor.medicalSpecialty.rawValue,
+                                evaluation: "4.8",
+                                servicios: ["Cardiología pediátrica", "Nefrología pediátrica"]
+                            )
+                    }
+                }
+                Spacer()
+            }
+        }
+    }
+}
+
+#Preview {
+    ResultsView()
+}

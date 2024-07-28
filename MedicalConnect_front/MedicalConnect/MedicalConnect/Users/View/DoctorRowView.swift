@@ -14,7 +14,6 @@ struct DoctorRowView: View {
             email: "josefina_diaz112@example.com",
             password: "123423234",
             phone: "523221984503",
-            photo: nil,
             medicalSpecialty: .cardiology,
             professionalLicense: "8877621A",
             jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
@@ -24,7 +23,7 @@ struct DoctorRowView: View {
             email: "josefina_diaz112@example.com",
             password: "123423234",
             phone: "523221984503",
-            photo: nil,
+            
             medicalSpecialty: .cardiology,
             professionalLicense: "8877621A",
             jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
@@ -34,7 +33,6 @@ struct DoctorRowView: View {
             email: "josefina_diaz112@example.com",
             password: "123423234",
             phone: "523221984503",
-            photo: nil,
             medicalSpecialty: .cardiology,
             professionalLicense: "8877621A",
             jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
@@ -43,7 +41,6 @@ struct DoctorRowView: View {
     ]    
     let name:  String
     let medicalSpeciality: String
-    let photo: String
     let evaluation: String
     let servicios: [String]
     var body: some View {
@@ -69,10 +66,14 @@ struct DoctorRowView: View {
                 .padding(.horizontal, 12)
                 
                 VStack(alignment: .center){
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120)
+                    
+                    
+                   
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 120)
+                        
 
                         
                     Label("\(evaluation)/5", systemImage: "star.fill")
@@ -89,8 +90,10 @@ struct DoctorRowView: View {
             .padding(.horizontal, 12)
         
     }
+    
+
 }
 
 #Preview {
-    DoctorRowView(name: "Josefina Díaz",medicalSpeciality: MedicalSpeality.pediatrics.rawValue, photo: "person.fill", evaluation: "4.78", servicios: ["Cardiología pediátrica", "Nefrología pediátrica"] )
+    DoctorRowView(name: "Josefina Díaz",medicalSpeciality: MedicalSpeality.pediatrics.rawValue, evaluation: "4.78", servicios: ["Cardiología pediátrica", "Nefrología pediátrica"] )
 }
