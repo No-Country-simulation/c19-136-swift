@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CardAboutDoctorView: View {
     @State var isFavorite: Bool = false
-    @State var scheduleAccess: Bool = false
     let name: String
     let evaluation: Float
     let medicalSpeciality: String
@@ -19,7 +18,7 @@ struct CardAboutDoctorView: View {
     let jobDescription: String
     
     var body: some View {
-        ScrollView{
+
                 
             VStack {
                 RoundedRectangle(cornerRadius: 12)
@@ -127,24 +126,19 @@ struct CardAboutDoctorView: View {
                         }
                             .padding(.horizontal, 12)
                             .frame(height: 450)
-                
-                
-                Button(action: {
-                    print("Agendar consulta")
-                }, label: {
-                    Text("Agendar consulta")
-                        .padding(.horizontal, 24)
-                        .font(Font.custom("Montserrat-SemiBold", size: 16))
-                        .kerning(1.2)
-                })
-                .buttonStyle(MainButtonStyle(isEnabled: scheduleAccess))
-                .padding(.vertical, 12)
-                
             }
-        }
+        
     }
 }
 
 #Preview {
-    CardAboutDoctorView(name: "Josefina Díaz", evaluation: 4.78, medicalSpeciality: MedicalSpeality.pediatrics.rawValue, servicios: ["Cardiología pediátrica", "Endocrinología pediátrica"], workDays: ["Lun", "Mar", "Jue"], numberOfConsults: 33, jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!")
+    CardAboutDoctorView(
+        name: "Josefina Díaz",
+        evaluation: 4.78,
+        medicalSpeciality: MedicalSpeality.pediatrics.rawValue,
+        servicios: ["Cardiología pediátrica", "Endocrinología pediátrica"],
+        workDays: ["Lun", "Mar", "Jue"],
+        numberOfConsults: 33,
+        jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
+    )
 }

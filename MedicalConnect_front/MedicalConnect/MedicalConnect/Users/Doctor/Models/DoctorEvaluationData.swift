@@ -11,7 +11,7 @@ struct DoctorEvaluationData: Hashable, Identifiable {
     let id: UUID = UUID()
     let averageOfEvaluations: Float?
     let numberOfConsults: Int?
-    let reviews: [Review?]
+    let reviews: [Review]?
 }
 
 

@@ -8,14 +8,14 @@
 import Foundation
 
 
-class ShowData {
+class DoctorDataValidations {
     
     
     func getAverageOfEvaluations(doctor: Doctor) -> Float {
-
+        
         
         guard let average = doctor.evaluationData.averageOfEvaluations else { return 0.00 }
-    
+        
         return average
     }
     
@@ -24,5 +24,18 @@ class ShowData {
         guard let consults = doctor.evaluationData.numberOfConsults else { return 0 }
         
         return consults
+    }
+    
+    
+    func getReviews(doctor: Doctor) -> [Review]? {
+        
+        guard let reviews = doctor.evaluationData.reviews else { return nil }
+        
+        return reviews
+    }
+    
+    func getReviewDescription(review description: String?) -> String {
+        guard let reviewDescription = description else { return " Excelente servicio"}
+        return reviewDescription
     }
 }

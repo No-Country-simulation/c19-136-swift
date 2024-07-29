@@ -8,39 +8,97 @@
 import SwiftUI
 
 struct ProfileDocView: View {
+    @State var isFavorite: Bool = false
+    @State var scheduleAccess: Bool = false
+    let name: String
+    let evaluation: Float
+    let medicalSpeciality: String
+    let services: [String]
+    let workDays: [String]
+    let numberOfConsults: Int
+    let jobDescription: String
+    let reviews: [Review]
+    
+    let validations = DoctorDataValidations()
+    
     var body: some View {
-        
-        VStack {
+       
+            
             NavigationStack {
-                UpperFrame(label: "")
                 
+                ScrollView {
+                    
+                    CardAboutDoctorView(
+                        name: name,
+                        evaluation: evaluation,
+                        medicalSpeciality: medicalSpeciality,
+                        servicios: services,
+                        workDays: workDays,
+                        numberOfConsults: numberOfConsults,
+                        jobDescription: jobDescription
+                    )
+                    
+                    
+                    Button(action: {
+                        print("Agendar consulta")
+                    }, label: {
+                        Text("Agendar consulta")
+                            .padding(.horizontal, 24)
+                            .font(Font.custom("Montserrat-SemiBold", size: 16))
+                            .kerning(1.2)
+                    })
+                    .buttonStyle(MainButtonStyle(isEnabled: scheduleAccess))
+                    .padding(.vertical, 12)
+                    
+                    
+                    VStack{
+                        Text("Reseñas")
+                            .padding(5)
+                            .font(Font.custom("Montserrat-semiBold", size: 14))
+                            .frame(maxWidth: .infinity)
+                            .background(.backgroundRows200, in: RoundedRectangle(cornerRadius: 8))
+                            .padding(.horizontal,12)
+                        
+                        ScrollView(.horizontal) {
+                            HStack{
+                                ForEach(reviews, id: \.id) { review in
+                                    
+                                    DoctorReviewCardView(
+                                        name: review.name,
+                                        evaluation: review.evaluation,
+                                        review: validations.getReviewDescription(review: review.reviewDescription)
+                                    )
+                                    
+                                    
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 12)
+                        
+                    }
+                }
                 
-                
-                
-                
-                
-                
+
                 Spacer()
                 
 
             }
-            
-        }
-        
-        VStack{
-//            CardAboutDoctorView(
-//                name: <#T##String#>,
-//                evaluation: <#T##String#>,
-//                medicalSpeciality: <#T##String#>,
-//                servicios: <#T##[String]#>,
-//                workDays: <#T##[String]#>,
-//                numberOfConsults: <#T##Int#>,
-//                jobDescription: <#T##String#>
-//            )
-        }
     }
 }
 
 #Preview {
-    ProfileDocView()
+   
+    let showData = DoctorDataValidations()
+    let test = TestData()
+    
+    return ProfileDocView(
+        name: test.doctor1.name,
+        evaluation: showData.getAverageOfEvaluations(doctor: test.doctor1),
+        medicalSpeciality: test.doctor1.medicalSpeciality.rawValue,
+        services: test.doctor1.services,
+        workDays: test.doctor1.workDays,
+        numberOfConsults: showData.getNumberOfConsults(doctor: test.doctor1),
+        jobDescription: test.doctor1.jobDescription,
+        reviews: showData.getReviews(doctor: test.doctor1)!
+    )
 }

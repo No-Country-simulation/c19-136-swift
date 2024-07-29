@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResultsView: View {
     let example = TestData()
-    let showData = ShowData()
+    let showData = DoctorDataValidations()
 
     var body: some View {
         VStack {

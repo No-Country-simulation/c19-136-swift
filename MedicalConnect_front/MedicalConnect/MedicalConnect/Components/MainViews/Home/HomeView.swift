@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     let example = TestData()
-    let showData = ShowData()
+    let showData = DoctorDataValidations()
     
     
    
