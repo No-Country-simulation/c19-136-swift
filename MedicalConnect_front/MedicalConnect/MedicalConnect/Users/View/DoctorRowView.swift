@@ -8,40 +8,11 @@
 import SwiftUI
 
 struct DoctorRowView: View {
-    let exampleDoctors: [Doctor] = [
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        )
+    let exampleTest = TestData()
     
-    ]    
     let name:  String
     let medicalSpeciality: String
-    let evaluation: String
+    let evaluation: Float
     let servicios: [String]
     var body: some View {
 
@@ -49,7 +20,7 @@ struct DoctorRowView: View {
             HStack{
                 VStack(alignment: .leading){
                     Text(name)
-                        .font(Font.custom("Montserrat-SemiBold", size: 20, relativeTo: .title))
+                        .font(Font.custom("Montserrat-SemiBold", size: 18, relativeTo: .title))
                     
                     Group {
                         Text(medicalSpeciality)
@@ -68,20 +39,18 @@ struct DoctorRowView: View {
                 VStack(alignment: .center){
                     
                     
-                   
                         Image(systemName: "person.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120, height: 120)
                         
-
                         
-                    Label("\(evaluation)/5", systemImage: "star.fill")
+                    Label("\(evaluation, format: .number.precision(.fractionLength(1)))/5.0", systemImage: "star.fill")
                         .font(Font.custom("Montserrat-SemiBold", size: 14,relativeTo: .subheadline))
                         .environment(\.layoutDirection, .rightToLeft)
                         
                 }
-                .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 12))
                 
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
@@ -95,5 +64,5 @@ struct DoctorRowView: View {
 }
 
 #Preview {
-    DoctorRowView(name: "Josefina Díaz",medicalSpeciality: MedicalSpeality.pediatrics.rawValue, evaluation: "4.78", servicios: ["Cardiología pediátrica", "Nefrología pediátrica"] )
+    DoctorRowView(name: "Josefina Díaz",medicalSpeciality: MedicalSpeality.pediatrics.rawValue, evaluation: 4.78, servicios: ["Cardiología pediátrica", "Endocrinología pediátrica"] )
 }

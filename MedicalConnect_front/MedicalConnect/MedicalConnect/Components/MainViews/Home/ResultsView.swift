@@ -8,79 +8,44 @@
 import SwiftUI
 
 struct ResultsView: View {
-    
-    let exampleDoctors: [Doctor] = [
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        ),
-        .init(
-            name: "Josefina Díaz",
-            email: "josefina_diaz112@example.com",
-            password: "123423234",
-            phone: "523221984503",
-            medicalSpecialty: .cardiology,
-            professionalLicense: "8877621A",
-            jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
-        )
-    
-    ]
+    let example = TestData()
+    let showData = ShowData()
+
     var body: some View {
         VStack {
             NavigationStack {
                 UpperFrame(label: "Resultados")
                 
                 ScrollView{
-                    ForEach(exampleDoctors, id:\.self){ doctor in
+                    ForEach(example.doctors, id:\.self){ doctor in
                         
-                     
+                        
+                        NavigationLink(value: doctor) {
                             DoctorRowView(
                                 name: doctor.name,
-                                medicalSpeciality: doctor.medicalSpecialty.rawValue,
-                                evaluation: "4.8",
-                                servicios: ["Cardiología pediátrica", "Nefrología pediátrica"]
+                                medicalSpeciality: doctor.medicalSpeciality.rawValue,
+                                evaluation: showData.getAverageOfEvaluations(doctor: doctor),
+                                servicios: doctor.services
                             )
+                        }
+                        .navigationDestination(for: Doctor.self) { doctor in
+                            
+                            
+                            CardAboutDoctorView(
+                                name: doctor.name,
+                                evaluation: showData.getAverageOfEvaluations(doctor: doctor),
+                                medicalSpeciality: doctor.medicalSpeciality.rawValue,
+                                servicios: doctor.services,
+                                workDays: doctor.workDays,
+                                numberOfConsults: showData.getNumberOfConsults(doctor: doctor),
+                                jobDescription: doctor.jobDescription
+                            )
+                            
+                        }
+                        .tint(.black)
+                  
+                     
+                          
                     }
                 }
                 Spacer()

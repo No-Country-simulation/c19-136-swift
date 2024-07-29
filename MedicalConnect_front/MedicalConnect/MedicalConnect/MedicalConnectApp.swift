@@ -11,7 +11,8 @@ import SwiftUI
 struct MedicalConnectApp: App {
     var body: some Scene {
         WindowGroup {
-            StartingView()
+            //StartingView()
+            ResultsView()
         }
     }
 }

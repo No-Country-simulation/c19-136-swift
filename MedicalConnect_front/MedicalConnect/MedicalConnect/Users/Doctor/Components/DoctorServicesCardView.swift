@@ -11,20 +11,19 @@ struct DoctorServicesCardView: View {
     let services: [String]
     var body: some View {
         
-        VStack{
+        VStack(alignment: .leading){
             ForEach(services, id: \.self) { service in
                 Text(service)
-                    .padding(8)
+                    .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                    .background(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                    
-                    .background(.white, in: RoundedRectangle(cornerRadius: 12.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
                     
             }
         } 
-        
-        
     }
 }
 
 #Preview {
-    DoctorServicesCardView(services: ["Cardiología pediátrica", "Nefrología pediátrica"])
+     DoctorServicesCardView(services: ["Cardiología pediátrica", "Nefrología pediátrica"])
 }

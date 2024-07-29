@@ -13,7 +13,14 @@ struct Doctor: Hashable, Identifiable {
     let email: String
     let password: String
     let phone: String
-    let medicalSpecialty: MedicalSpeality
+    let medicalSpeciality: MedicalSpeality
     let professionalLicense: String
     let jobDescription: String
+    
+    let workDays:[String]
+    let services: [String]
+    
+    let evaluationData: DoctorEvaluationData
+
+
 }

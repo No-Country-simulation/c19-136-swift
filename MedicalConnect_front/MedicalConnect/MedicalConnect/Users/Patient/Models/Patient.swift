@@ -9,7 +9,7 @@ import Foundation
 
 struct Patient: Hashable, Identifiable {
 
-    let id: ObjectIdentifier
+    let id = UUID()
     let name: String
     let email: String
     let password: String
