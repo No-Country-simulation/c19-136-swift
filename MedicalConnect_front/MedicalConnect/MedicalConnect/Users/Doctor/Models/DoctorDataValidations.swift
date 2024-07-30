@@ -27,11 +27,14 @@ class DoctorDataValidations {
     }
     
     
-    func getReviews(doctor: Doctor) -> [Review]? {
+    func getReviews(doctor: Doctor) -> Any {
         
-        guard let reviews = doctor.evaluationData.reviews else { return nil }
         
+        guard let reviews = doctor.evaluationData.reviews else { return ["Todavía no tiene reviews"] }
         return reviews
+        
+        
+     
     }
     
     func getReviewDescription(review description: String?) -> String {

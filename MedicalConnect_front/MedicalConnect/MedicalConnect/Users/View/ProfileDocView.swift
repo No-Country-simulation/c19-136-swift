@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileDocView: View {
-    @State var isFavorite: Bool = false
+
     @State var scheduleAccess: Bool = false
     let name: String
     let evaluation: Float
@@ -24,7 +24,7 @@ struct ProfileDocView: View {
     var body: some View {
        
             
-            NavigationStack {
+            VStack {
                 
                 ScrollView {
                     
@@ -47,14 +47,14 @@ struct ProfileDocView: View {
                             .font(Font.custom("Montserrat-SemiBold", size: 16))
                             .kerning(1.2)
                     })
-                    .buttonStyle(MainButtonStyle(isEnabled: scheduleAccess))
+                    .buttonStyle(MainButtonStyle(isEnabled: true))
                     .padding(.vertical, 12)
                     
                     
                     VStack{
                         Text("Reseñas")
                             .padding(5)
-                            .font(Font.custom("Montserrat-semiBold", size: 14))
+                            .font(Font.custom("Montserrat-semiBold", size: 16))
                             .frame(maxWidth: .infinity)
                             .background(.backgroundRows200, in: RoundedRectangle(cornerRadius: 8))
                             .padding(.horizontal,12)
@@ -99,6 +99,6 @@ struct ProfileDocView: View {
         workDays: test.doctor1.workDays,
         numberOfConsults: showData.getNumberOfConsults(doctor: test.doctor1),
         jobDescription: test.doctor1.jobDescription,
-        reviews: showData.getReviews(doctor: test.doctor1)!
+        reviews: showData.getReviews(doctor: test.doctor1) as! [Review]
     )
 }

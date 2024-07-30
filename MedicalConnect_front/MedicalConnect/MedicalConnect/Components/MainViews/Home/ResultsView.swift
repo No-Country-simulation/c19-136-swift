@@ -31,15 +31,18 @@ struct ResultsView: View {
                         .navigationDestination(for: Doctor.self) { doctor in
                             
                             
-                            CardAboutDoctorView(
+                            ProfileDocView(
                                 name: doctor.name,
                                 evaluation: showData.getAverageOfEvaluations(doctor: doctor),
                                 medicalSpeciality: doctor.medicalSpeciality.rawValue,
-                                servicios: doctor.services,
+                                services: doctor.services,
                                 workDays: doctor.workDays,
                                 numberOfConsults: showData.getNumberOfConsults(doctor: doctor),
-                                jobDescription: doctor.jobDescription
+                                jobDescription: doctor.jobDescription,
+                                reviews: showData.getReviews(doctor: doctor) as! [Review]
                             )
+                            
+                            
                             
                         }
                         .tint(.black)
