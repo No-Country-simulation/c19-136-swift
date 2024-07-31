@@ -11,7 +11,7 @@ struct TextFieldDataView: View {
     let label: String
     let prompt: String
     let keyboard: UIKeyboardType
-    @State var data: String = ""
+    @Binding var data: String
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -32,7 +32,8 @@ struct TextFieldDataView: View {
 
 #Preview {
 
-    return  TextFieldDataView(label: "Email", prompt: "ejemplo@email.com", keyboard: .emailAddress)
+    @State var data:String = "Hola"
+    return  TextFieldDataView(label: "Email", prompt: "ejemplo@email.com", keyboard: .emailAddress, data: $data)
 }
 
 

@@ -14,11 +14,11 @@ struct MyDataView: View {
     var body: some View {
         VStack {
             MyDataFrameView(
-                name: test.patient1.name,
+                name: test.patient1.user.name,
                 birthdate: test.patient1.birthdate,
-                phone: test.patient1.phone,
-                email: test.patient1.email,
-                password: test.patient1.password
+                phone: test.patient1.user.phone,
+                email: test.patient1.user.email,
+                password: test.patient1.user.password
             )
             
             Button(action: {

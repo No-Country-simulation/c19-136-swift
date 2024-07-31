@@ -19,14 +19,9 @@ struct StartingView: View {
                     Image("LOGO")
                         .resizable()
                         .scaledToFit()
-                        //.aspectRatio(contentMode: .fit)
                        
                 }
                 
-
-                
-             
-            
 
                 Button(action: {
                     nextViewButton = true
@@ -40,12 +35,10 @@ struct StartingView: View {
                 .padding(.bottom,20)
                
             }
-            
             .navigationDestination(isPresented: $nextViewButton, destination: {
                 OnboardingView()
                     .navigationBarBackButtonHidden()
             })
-           
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(content: {
                 LinearGradient(gradient: Gradient(colors:[Color("babyBlue-100"), Color("babyBlue-200")]), startPoint: .top, endPoint: .bottom)

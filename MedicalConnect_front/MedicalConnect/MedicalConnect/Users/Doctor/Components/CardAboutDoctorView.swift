@@ -13,9 +13,10 @@ struct CardAboutDoctorView: View {
     let evaluation: Float
     let medicalSpeciality: String
     let servicios: [String]
-    let workDays: [String]
+    let workDays: [WorkDays]
     let numberOfConsults: Int
     let jobDescription: String
+    let validations = DoctorDataValidations()
     
     var body: some View {
 
@@ -72,7 +73,7 @@ struct CardAboutDoctorView: View {
                                             DoctorServicesCardView(services: servicios)
                                                 .font(Font.custom("Montserrat-Regular", size: 12, relativeTo: .subheadline))
                                             
-                                            Text("Atención: \(workDays.joined(separator: " - "))")
+                                            Text("Atención: \(validations.getWorksDays(days: workDays).joined(separator: " - "))")
                                                 .font(Font.custom("Montserrat-Regular", size: 14, relativeTo: .subheadline))
                                                 .padding(.vertical, 10)
                                                 
@@ -137,7 +138,7 @@ struct CardAboutDoctorView: View {
         evaluation: 4.78,
         medicalSpeciality: MedicalSpeality.pediatrics.rawValue,
         servicios: ["Cardiología pediátrica", "Endocrinología pediátrica"],
-        workDays: ["Lun", "Mar", "Jue"],
+        workDays: [ WorkDays.monday, WorkDays.tuesday, WorkDays.wednesday],
         numberOfConsults: 33,
         jobDescription: "Hace más de 10 años que practico medicina pediátrica y me apasiona trabajar con niños, poder contribuir a su salud se ha convertido en la pasión de mi vida. Me he especializado en pediatría y luego elegí la cardiología para poder cuidar y curar los corazones del mañana. ¡Gracias por elegirme!"
     )

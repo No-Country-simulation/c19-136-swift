@@ -41,4 +41,15 @@ class DoctorDataValidations {
         guard let reviewDescription = description else { return " Excelente servicio"}
         return reviewDescription
     }
+    
+    func getWorksDays(days: [WorkDays]) -> [String]{
+        var daysStringFormat : [String] = []
+    
+        for day in days {
+            daysStringFormat.append(day.rawValue)
+        }
+        return daysStringFormat
+    }
+    
+    
 }

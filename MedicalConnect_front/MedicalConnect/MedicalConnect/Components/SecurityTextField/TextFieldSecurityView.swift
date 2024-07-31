@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct TextFieldSecurityView: View {
-    @State var password: String = ""
+    @Binding var password: String
     let label: String
     let prompt: String
     let keyboard: UIKeyboardType
@@ -83,5 +83,7 @@ struct TextFieldSecurityView: View {
 }
 
 #Preview {
-    TextFieldSecurityView( label: "Contraseña", prompt: "Contraseña", keyboard: .asciiCapable)
+    
+    @State var password: String = ""
+    return TextFieldSecurityView( password: $password, label: "Contraseña", prompt: "Contraseña", keyboard: .asciiCapable)
 }

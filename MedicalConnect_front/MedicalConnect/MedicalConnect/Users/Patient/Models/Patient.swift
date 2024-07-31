@@ -7,13 +7,11 @@
 
 import Foundation
 
-struct Patient: Hashable, Identifiable {
+struct Patient:Hashable, Identifiable {
 
     let id = UUID()
-    let name: String
-    let email: String
-    let password: String
-    let phone: String
+    let user : User
+    
     let photo: URL?
     let birthdate: Date
     let allergies: String

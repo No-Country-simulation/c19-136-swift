@@ -15,7 +15,7 @@ struct HomeView: View {
    
     var body: some View {
         VStack {
-            NavigationStack {
+//            NavigationStack {
                 UpperFrame(label: "Encuentra el profesional que necesitas")
                 
                 
@@ -30,7 +30,7 @@ struct HomeView: View {
                         
                         DoctorRowView(
                             
-                            name: doctor.name,
+                            name: doctor.user.name,
                             medicalSpeciality: doctor.medicalSpeciality.rawValue,
                             evaluation: showData.getAverageOfEvaluations(doctor: doctor),
                             servicios: doctor.services
@@ -40,7 +40,7 @@ struct HomeView: View {
                 }
 
                 Spacer()
-            }
+//            }
         }
     }
 }

@@ -8,19 +8,16 @@
 import Foundation
 
 struct Doctor: Hashable, Identifiable {
-    let id: UUID = UUID()
-    let name: String
-    let email: String
-    let password: String
-    let phone: String
+    var id: UUID = UUID()
+    
+    let user : User
     let medicalSpeciality: MedicalSpeality
     let professionalLicense: String
     let jobDescription: String
     
-    let workDays:[String]
+    let workDays:[WorkDays]
     let services: [String]
     
     let evaluationData: DoctorEvaluationData
-
-
+    
 }

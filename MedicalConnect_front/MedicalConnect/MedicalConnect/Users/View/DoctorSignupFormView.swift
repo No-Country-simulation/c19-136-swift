@@ -11,9 +11,10 @@ struct DoctorSignupFormView: View {
     @State var selectedMedicalSpeciality: MedicalSpeality = .cardiology
     
     @State var continueAccess: Bool = false
+    @State var password: String = ""
     
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             UpperFrame(label: "Te pediremos algunos datos importantes")
             
             ScrollView {
@@ -45,7 +46,7 @@ struct DoctorSignupFormView: View {
                 .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                 
                 
-                TextFieldDataView(label: "Cédula Profesional", prompt: "Ingrese su cédula", keyboard: .asciiCapable)
+                TextFieldDataView(label: "Cédula Profesional", prompt: "Ingrese su cédula", keyboard: .asciiCapable, data: $password)
                     .padding(.bottom, 12)
                 
                 BigFrameTextFieldView(label: "Escribe sobre tu experiencia y servicios", prompt: "Ejemplo: Dermatólogo (Enfermedades de transmisión sexual, Detección precoz de cáncer de piel, Cirugía de la piel, Dermatología cosmética...", keyboard: .asciiCapable)
@@ -62,7 +63,7 @@ struct DoctorSignupFormView: View {
                 .padding(.vertical, 12)
                 
             }
-        }
+//        }
     }
 }
 

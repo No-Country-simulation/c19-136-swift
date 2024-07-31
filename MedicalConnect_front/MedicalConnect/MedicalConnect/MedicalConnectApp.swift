@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct MedicalConnectApp: App {
+    let routeManager = NavigationRouter()
     var body: some Scene {
         WindowGroup {
             //StartingView()
-            ResultsView()
+          //  SignUpView()
+            OnboardingView()
+                .environmentObject(routeManager)
+          
         }
     }
 }

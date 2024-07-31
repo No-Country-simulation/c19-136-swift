@@ -22,7 +22,7 @@ struct ResultsView: View {
                         
                         NavigationLink(value: doctor) {
                             DoctorRowView(
-                                name: doctor.name,
+                                name: doctor.user.name,
                                 medicalSpeciality: doctor.medicalSpeciality.rawValue,
                                 evaluation: showData.getAverageOfEvaluations(doctor: doctor),
                                 servicios: doctor.services
@@ -32,7 +32,7 @@ struct ResultsView: View {
                             
                             
                             ProfileDocView(
-                                name: doctor.name,
+                                name: doctor.user.name,
                                 evaluation: showData.getAverageOfEvaluations(doctor: doctor),
                                 medicalSpeciality: doctor.medicalSpeciality.rawValue,
                                 services: doctor.services,

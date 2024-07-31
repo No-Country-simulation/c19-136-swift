@@ -14,7 +14,7 @@ struct ProfileDocView: View {
     let evaluation: Float
     let medicalSpeciality: String
     let services: [String]
-    let workDays: [String]
+    let workDays: [WorkDays]
     let numberOfConsults: Int
     let jobDescription: String
     let reviews: [Review]
@@ -92,7 +92,7 @@ struct ProfileDocView: View {
     let test = TestData()
     
     return ProfileDocView(
-        name: test.doctor1.name,
+        name: test.doctor1.user.name,
         evaluation: showData.getAverageOfEvaluations(doctor: test.doctor1),
         medicalSpeciality: test.doctor1.medicalSpeciality.rawValue,
         services: test.doctor1.services,

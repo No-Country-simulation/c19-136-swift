@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct PatientSignupFormView: View {
+    
+    @State var phone: String = ""
     @State var selectedGenderOption: Gender = .FEMALE
+    
     @State var birthdate: Date = .now
     @State var existAllergies : Allergies = .yes
     @State var allergies: String = ""
@@ -17,12 +20,12 @@ struct PatientSignupFormView: View {
     var body: some View {
         VStack{
            
-            NavigationStack {
+//            NavigationStack {
                 UpperFrame(label: "Te pediremos algunos datos importantes")
                 
                 
                 ScrollView {
-                    TextFieldDataView(label: "Número de teléfono móvil", prompt: "+549 111 111 111", keyboard: .phonePad)
+                    TextFieldDataView(label: "Número de teléfono móvil", prompt: "+549 111 111 111", keyboard: .phonePad, data: $phone)
                         .padding(.vertical, 12)
                     
                     
@@ -87,7 +90,7 @@ struct PatientSignupFormView: View {
 
                 
                 Spacer()
-            }
+//            }
         }
     }
 }
