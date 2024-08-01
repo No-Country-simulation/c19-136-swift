@@ -27,10 +27,14 @@ class DoctorDataValidations {
     }
     
     
-    func getReviews(doctor: Doctor) -> Any {
+    func getReviews(doctor: Doctor) -> [Review] {
+        let review = Review(
+            name: "",
+            evaluation: 0.00,
+            reviewDescription: "Todavía no tiene reviews"
+        )
         
-        
-        guard let reviews = doctor.evaluationData.reviews else { return ["Todavía no tiene reviews"] }
+        guard let reviews = doctor.evaluationData.reviews else { return [review] }
         return reviews
         
         

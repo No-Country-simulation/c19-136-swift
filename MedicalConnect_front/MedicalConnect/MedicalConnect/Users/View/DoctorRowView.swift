@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct DoctorRowView: View {
-    let exampleTest = TestData()
     
-    let name:  String
-    let medicalSpeciality: String
-    let evaluation: Float
-    let servicios: [String]
+    let doctor: Doctor
+    let validations = DoctorDataValidations()
+
+
     var body: some View {
 
             
             HStack{
                 VStack(alignment: .leading){
-                    Text(name)
+                    Text(doctor.user.name)
                         .font(Font.custom("Montserrat-SemiBold", size: 18, relativeTo: .title))
                     
                     Group {
-                        Text(medicalSpeciality)
+                        Text(doctor.medicalSpeciality.rawValue)
                             .font(Font.custom("Montserrat-Regular", size: 14, relativeTo: .subheadline))
                         
-                        DoctorServicesCardView(services: servicios)
+                        DoctorServicesCardView(services: doctor.services)
                             .font(Font.custom("Montserrat-Regular", size: 12, relativeTo: .subheadline))
                             
 
@@ -45,7 +44,7 @@ struct DoctorRowView: View {
                             .frame(width: 120, height: 120)
                         
                         
-                    Label("\(evaluation, format: .number.precision(.fractionLength(1)))/5.0", systemImage: "star.fill")
+                    Label("\(validations.getAverageOfEvaluations(doctor: doctor), format: .number.precision(.fractionLength(1)))/5.0", systemImage: "star.fill")
                         .font(Font.custom("Montserrat-SemiBold", size: 14,relativeTo: .subheadline))
                         .environment(\.layoutDirection, .rightToLeft)
                         
@@ -64,5 +63,10 @@ struct DoctorRowView: View {
 }
 
 #Preview {
-    DoctorRowView(name: "Josefina Díaz",medicalSpeciality: MedicalSpeality.pediatrics.rawValue, evaluation: 4.78, servicios: ["Cardiología pediátrica", "Endocrinología pediátrica"] )
+    
+    let test = TestData()
+    return DoctorRowView(doctor: test.doctor1)
+
 }
+
+

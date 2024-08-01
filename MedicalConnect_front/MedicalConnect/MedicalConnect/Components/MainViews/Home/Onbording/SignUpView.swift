@@ -14,9 +14,7 @@ struct SignUpView: View {
     @EnvironmentObject var navigationManager : NavigationRouter
     var body: some View {
         VStack{
-//            NavigationStack{
-                
-       
+
             UpperFrame(label: "Registrarme como")
             
                 Picker("Type of user", selection: $userManager.selectedTypeOfUser) {
@@ -39,10 +37,10 @@ struct SignUpView: View {
                 Button(action: {
                     
                     if userManager.selectedTypeOfUser == .patient {
-                        navigationManager.routes.append(.signupForm(.patient))
+                        navigationManager.routes.append(.signupForm(.patient(user: userManager.user)))
                         print("Patient")
                     } else {
-                        navigationManager.routes.append(.signupForm(.doctor))
+                        navigationManager.routes.append(.signupForm(.doctor(user: userManager.user)))
                         print("Doctor")
                     }
                     
@@ -61,15 +59,10 @@ struct SignUpView: View {
                
             
             Spacer()
-//        }
-            
+
         }
         .navigationDestination(for: Route.self) { $0 }
-       
-        
-      
     }
-    
 }
 
 #Preview {

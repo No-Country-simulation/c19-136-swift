@@ -8,19 +8,12 @@
 import SwiftUI
 
 struct ProfileDocView: View {
+    
+    let doctor: Doctor
+    private let validations: DoctorDataValidations = DoctorDataValidations()
 
     @State var scheduleAccess: Bool = false
-    let name: String
-    let evaluation: Float
-    let medicalSpeciality: String
-    let services: [String]
-    let workDays: [WorkDays]
-    let numberOfConsults: Int
-    let jobDescription: String
-    let reviews: [Review]
-    
-    let validations = DoctorDataValidations()
-    
+
     var body: some View {
        
             
@@ -29,13 +22,13 @@ struct ProfileDocView: View {
                 ScrollView {
                     
                     CardAboutDoctorView(
-                        name: name,
-                        evaluation: evaluation,
-                        medicalSpeciality: medicalSpeciality,
-                        servicios: services,
-                        workDays: workDays,
-                        numberOfConsults: numberOfConsults,
-                        jobDescription: jobDescription
+                        name: doctor.user.name,
+                        evaluation: validations.getAverageOfEvaluations(doctor: doctor),
+                        medicalSpeciality: doctor.medicalSpeciality.rawValue,
+                        servicios: doctor.services,
+                        workDays: doctor.workDays,
+                        numberOfConsults: validations.getNumberOfConsults(doctor: doctor),
+                        jobDescription: doctor.jobDescription
                     )
                     
                     
@@ -61,7 +54,7 @@ struct ProfileDocView: View {
                         
                         ScrollView(.horizontal) {
                             HStack{
-                                ForEach(reviews, id: \.id) { review in
+                                ForEach(validations.getReviews(doctor: doctor), id: \.id) { review in
                                     
                                     DoctorReviewCardView(
                                         name: review.name,
@@ -91,14 +84,5 @@ struct ProfileDocView: View {
     let showData = DoctorDataValidations()
     let test = TestData()
     
-    return ProfileDocView(
-        name: test.doctor1.user.name,
-        evaluation: showData.getAverageOfEvaluations(doctor: test.doctor1),
-        medicalSpeciality: test.doctor1.medicalSpeciality.rawValue,
-        services: test.doctor1.services,
-        workDays: test.doctor1.workDays,
-        numberOfConsults: showData.getNumberOfConsults(doctor: test.doctor1),
-        jobDescription: test.doctor1.jobDescription,
-        reviews: showData.getReviews(doctor: test.doctor1) as! [Review]
-    )
+    return ProfileDocView(doctor: test.doctor1)
 }

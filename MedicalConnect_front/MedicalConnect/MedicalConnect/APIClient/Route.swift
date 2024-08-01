@@ -14,11 +14,12 @@ enum Route {
     case signup
     case login
     case signupForm(UserRoute)
+    case results(Doctor)
     
     
     enum UserRoute: Hashable {
-        case doctor
-        case patient
+        case doctor(user: User)
+        case patient(user: User)
     }
 //    case results
 //    case doctorProfile
@@ -30,6 +31,16 @@ enum Route {
 //    case myAppointments
 //    case config
     
+    enum DoctorRoute: Hashable {
+        case home
+        case details
+    }
+    
+    
+    enum PatientRoute: Hashable {
+        case home
+        case details
+    }
     
     
     
@@ -53,6 +64,9 @@ extension Route: Hashable {
                 
             case (.signupForm(let lhsUser), .signupForm(let rhsUser)):
                 return lhsUser == rhsUser
+                
+            case (.results(let lhsDoctor), .results(let rhsDoctor)):
+                return lhsDoctor == rhsDoctor
             default:
                 return false
   
@@ -73,15 +87,25 @@ extension Route: View {
             case .signup:
                     SignUpView()
                 
-            case .signupForm(let user):
-                switch user {
-                    case .doctor:
-                        DoctorSignupFormView()
-                    case .patient:
-                        PatientSignupFormView()
+            case .signupForm(let userRoute):
+                
+                switch userRoute{
+                    
+                        
+                    case .doctor(user: let user):
+                        DoctorSignupFormView(user: user)
+                    case .patient(user: let user):
+                       // DoctorSignupFormView(user: user)
+                        PatientSignupFormView(user: user)
+
                 }
+                
+            
+            case .results( let item ):
+//                DoctorRowView(doctor: item)
+                ProfileDocView(doctor: item)
+
         }
     }
-    
     
 }

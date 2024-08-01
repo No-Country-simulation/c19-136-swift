@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DoctorSignupFormView: View {
+    let user: User
+    
+    
     @State var selectedMedicalSpeciality: MedicalSpeality = .cardiology
     
     @State var continueAccess: Bool = false
@@ -29,7 +32,7 @@ struct DoctorSignupFormView: View {
                             
                             .stroke(Color("babyBlue-300"), lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                         
-                        Picker("Select your gender", selection: $selectedMedicalSpeciality) {
+                        Picker("Select your speciality", selection: $selectedMedicalSpeciality) {
                             ForEach(MedicalSpeality.allCases, id: \.self) { option in
                                 Text(option.rawValue)
                                     
@@ -68,5 +71,6 @@ struct DoctorSignupFormView: View {
 }
 
 #Preview {
-    DoctorSignupFormView()
+    let test = TestData()
+    return DoctorSignupFormView(user: test.doctor1.user)
 }

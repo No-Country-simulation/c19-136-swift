@@ -10,11 +10,11 @@ import Foundation
 struct Patient:Hashable, Identifiable {
 
     let id = UUID()
-    let user : User
+    var user : User
     
-    let photo: URL?
-    let birthdate: Date
-    let allergies: String
-    let gender: Gender
+    var photo: URL?
+    var birthdate: Date
+    var allergies: String
+    var gender: Gender
     
 }

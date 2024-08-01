@@ -21,29 +21,13 @@ struct ResultsView: View {
                         
                         
                         NavigationLink(value: doctor) {
-                            DoctorRowView(
-                                name: doctor.user.name,
-                                medicalSpeciality: doctor.medicalSpeciality.rawValue,
-                                evaluation: showData.getAverageOfEvaluations(doctor: doctor),
-                                servicios: doctor.services
-                            )
+                            DoctorRowView(doctor: doctor)
                         }
                         .navigationDestination(for: Doctor.self) { doctor in
                             
-                            
-                            ProfileDocView(
-                                name: doctor.user.name,
-                                evaluation: showData.getAverageOfEvaluations(doctor: doctor),
-                                medicalSpeciality: doctor.medicalSpeciality.rawValue,
-                                services: doctor.services,
-                                workDays: doctor.workDays,
-                                numberOfConsults: showData.getNumberOfConsults(doctor: doctor),
-                                jobDescription: doctor.jobDescription,
-                                reviews: showData.getReviews(doctor: doctor) as! [Review]
-                            )
-                            
-                            
-                            
+                            ProfileDocView(doctor: doctor)
+
+        
                         }
                         .tint(.black)
                   

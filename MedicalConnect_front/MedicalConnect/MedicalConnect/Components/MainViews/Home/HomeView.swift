@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var dataManager = DataManager()
+    
     let example = TestData()
     let showData = DoctorDataValidations()
     
@@ -15,7 +17,6 @@ struct HomeView: View {
    
     var body: some View {
         VStack {
-//            NavigationStack {
                 UpperFrame(label: "Encuentra el profesional que necesitas")
                 
                 
@@ -26,22 +27,16 @@ struct HomeView: View {
                     HeaderView(title: "Últimos médicos agregados")
                     
                     ForEach(example.doctors, id: \.self){ doctor in
-                        
-                        
-                        DoctorRowView(
-                            
-                            name: doctor.user.name,
-                            medicalSpeciality: doctor.medicalSpeciality.rawValue,
-                            evaluation: showData.getAverageOfEvaluations(doctor: doctor),
-                            servicios: doctor.services
-                        )
-                        
+                
+                        NavigationLink(value: Route.results(doctor)) {
+                            DoctorRowView(doctor: doctor)
+                        }
                     }
-                }
+                }.tint(.black)
 
                 Spacer()
-//            }
         }
+        .navigationDestination(for: Route.self, destination: {$0})
     }
 }
 
