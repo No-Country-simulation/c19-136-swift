@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7005D7912C5B4D2700F6C234 /* Doctor Suffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005D7902C5B4D2700F6C234 /* Doctor Suffix.swift */; };
+		7005D7932C5B6FE000F6C234 /* PatientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005D7922C5B6FE000F6C234 /* PatientManager.swift */; };
+		7005D7952C5B7C0D00F6C234 /* HashTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005D7942C5B7C0D00F6C234 /* HashTagView.swift */; };
 		70205E1E2C58C37100B7381B /* MyDataFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E1D2C58C37100B7381B /* MyDataFrameView.swift */; };
 		70205E202C58C7C400B7381B /* MyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E1F2C58C7C400B7381B /* MyDataView.swift */; };
 		70205E222C58C9A500B7381B /* MyAppointmentsHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E212C58C9A500B7381B /* MyAppointmentsHistoryView.swift */; };
@@ -81,6 +83,8 @@
 
 /* Begin PBXFileReference section */
 		7005D7902C5B4D2700F6C234 /* Doctor Suffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor Suffix.swift"; sourceTree = "<group>"; };
+		7005D7922C5B6FE000F6C234 /* PatientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientManager.swift; sourceTree = "<group>"; };
+		7005D7942C5B7C0D00F6C234 /* HashTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagView.swift; sourceTree = "<group>"; };
 		70205E1D2C58C37100B7381B /* MyDataFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDataFrameView.swift; path = MedicalConnect/Users/Patient/MyDataFrameView.swift; sourceTree = SOURCE_ROOT; };
 		70205E1F2C58C7C400B7381B /* MyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataView.swift; sourceTree = "<group>"; };
 		70205E212C58C9A500B7381B /* MyAppointmentsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsHistoryView.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				70FBEF4C2C54D007004FDA53 /* Allergies.swift */,
 				707154772C58B8C50044511C /* MenuProfile.swift */,
 				707154792C58BBE10044511C /* MyMenu.swift */,
+				7005D7922C5B6FE000F6C234 /* PatientManager.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				703A4EE62C55D97A00ECA09B /* DoctorServicesCardView.swift */,
 				703A4EEA2C55F12200ECA09B /* CardAboutDoctorView.swift */,
 				70D9B5AD2C56C0D700E507DD /* DoctorReviewCardView.swift */,
+				7005D7942C5B7C0D00F6C234 /* HashTagView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -612,6 +618,7 @@
 				7087A1F52C59D5B400A3CEFB /* Endpoint.swift in Sources */,
 				70205E242C58C9F000B7381B /* MyAppointmentRowView.swift in Sources */,
 				703A4EE42C55CF1800ECA09B /* DoctorRowView.swift in Sources */,
+				7005D7952C5B7C0D00F6C234 /* HashTagView.swift in Sources */,
 				703AE8E82C52A16F007FEC4C /* MedicalConnectApp.swift in Sources */,
 				7005D7912C5B4D2700F6C234 /* Doctor Suffix.swift in Sources */,
 				7071546F2C587D770044511C /* ScheduleAppointmentView.swift in Sources */,
@@ -661,6 +668,7 @@
 				70D9B5B02C56D2ED00E507DD /* Review.swift in Sources */,
 				70FBEF472C54C72B004FDA53 /* DoctorSignupFormView.swift in Sources */,
 				70205E1E2C58C37100B7381B /* MyDataFrameView.swift in Sources */,
+				7005D7932C5B6FE000F6C234 /* PatientManager.swift in Sources */,
 				70FE4F212C572B0800E10A7F /* DoctorDataValidations.swift in Sources */,
 				703A4ED72C55AE5200ECA09B /* ConfigServices.swift in Sources */,
 			);

@@ -10,14 +10,14 @@ import Foundation
 struct Doctor: Hashable, Identifiable {
     var id: UUID = UUID()
     
-    let user : User
-    let medicalSpeciality: MedicalSpeality
-    let professionalLicense: String
-    let jobDescription: String
+    var user : User
+    var medicalSpeciality: MedicalSpeality
+    var professionalLicense: String
+    var jobDescription: String
     
-    let workDays:[WorkDays]
-    let services: [String]
+    var workDays:[WorkDays]
+    var services: [String]
     
-    let evaluationData: DoctorEvaluationData
+    var evaluationData: DoctorEvaluationData
     
 }

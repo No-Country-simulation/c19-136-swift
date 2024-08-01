@@ -87,66 +87,75 @@ class UserManager: ObservableObject {
 }
 
 
-class PatientManager: ObservableObject {
+
     
-    @Published var patient: Patient
-    @Published var existAllergies : Allergies = .no
+
+class DoctorManager: ObservableObject {
+    
+    @Published var doctor: Doctor
+    
     @Published var continueAccess: Bool = false
+    
+    @Published var addingServiceLabels: String = ""
     
     
     private var cancellables = Set<AnyCancellable>()
     init(
-        patient: Patient = Patient(
-            user: User(
-                name: "",
-                email: "",
-                password: "",
-                phone: "",
-                typeOfUser: .patient
-            ),
-            photo: nil,
-            birthdate: Date(),
-            allergies: "",
-            gender: .FEMALE
-        )
+        doctor: Doctor = Doctor(
+                        user:User(
+                            name: "",
+                            email: "",
+                            password: "",
+                            phone: "",
+                            typeOfUser: .doctor
+                        ),
+                        medicalSpeciality: .gynecology,
+                        professionalLicense: "",
+                        jobDescription: "",
+                        workDays: [.monday, .wednesday, .saturday],
+                        services: [""],
+                        evaluationData: DoctorEvaluationData(
+                            averageOfEvaluations: 0.0,
+                            numberOfConsults: 0,
+                            reviews: [Review(
+                                name: "E-Connect",
+                                evaluation: 0,
+                                reviewDescription: "Aún no tiene evaluaciones"
+                            )]
+        ))
     ) {
-        self.patient = patient
+        self.doctor = doctor
         setupValidation()
     }
     
-  
+    
     
     
     final func setupValidation(){
-
         
-       
-        Publishers.CombineLatest3(
-            $patient.map(\.user.phone),
-
-            $patient.map(\.allergies),
-            $existAllergies
+        
+        
+        Publishers.CombineLatest(
+            $doctor.map(\.user.phone),
+            $doctor.map(\.professionalLicense)
+        
             
-       
             
-        ).map({ phone, allergies, existAllergies in
-         
-            let phoneIsValid = !phone.isEmpty
-            let allergiesIsValid = existAllergies == .yes  || (existAllergies == .no)
-            return phoneIsValid && allergiesIsValid
-          //  return !phone.isEmpty || !allergies.isEmpty
+            
+            
+        ).map({ phone, professionalLicense in
+            
+           
+            return !phone.isEmpty && !professionalLicense.isEmpty
         })
         .assign(to: &$continueAccess)
         
     }
     
     
-    final func saveUserDataInPatient(userData: User){
-        patient.user = userData
+    final func saveUserDataInDoctor(userData: User){
+        doctor.user = userData
     }
-
-    
-
 }
 
 

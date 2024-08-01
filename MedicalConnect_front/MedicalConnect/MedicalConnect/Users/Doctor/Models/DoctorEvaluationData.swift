@@ -9,9 +9,9 @@ import Foundation
 
 struct DoctorEvaluationData: Hashable, Identifiable {
     let id: UUID = UUID()
-    let averageOfEvaluations: Float?
-    let numberOfConsults: Int?
-    let reviews: [Review]?
+    var averageOfEvaluations: Float?
+    var numberOfConsults: Int?
+    var reviews: [Review]?
 }
 
 

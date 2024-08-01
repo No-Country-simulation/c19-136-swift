@@ -9,7 +9,7 @@ import Foundation
 
 struct Review: Hashable, Identifiable {
     let id: UUID = UUID()
-    let name: String
-    let evaluation: Float
-    let reviewDescription: String?
+    var name: String
+    var evaluation: Float
+    var reviewDescription: String?
 }
