@@ -17,4 +17,5 @@ struct Patient:Hashable, Identifiable {
     var allergies: String
     var gender: Gender
     
+    var paymentMethods: [PaymentMethod]?
 }

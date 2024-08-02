@@ -60,7 +60,7 @@ class UserManager: ObservableObject {
                     evaluation: 0,
                     reviewDescription: "Aún no tiene evaluaciones"
                 )]
-            )
+            ), servicePrice: 0.00
         )
         
         setupValidation()

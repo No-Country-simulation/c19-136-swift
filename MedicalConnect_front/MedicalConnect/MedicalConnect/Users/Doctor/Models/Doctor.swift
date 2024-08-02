@@ -19,5 +19,8 @@ struct Doctor: Hashable, Identifiable {
     var services: [String]
     
     var evaluationData: DoctorEvaluationData
+    var servicePrice: Float
     
 }
+
+

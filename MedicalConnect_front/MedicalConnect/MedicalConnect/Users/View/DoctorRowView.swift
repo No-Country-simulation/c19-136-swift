@@ -19,14 +19,14 @@ struct DoctorRowView: View {
             HStack{
                 VStack(alignment: .leading){
                     Text(doctor.user.name)
-                        .font(Font.custom("Montserrat-SemiBold", size: 18, relativeTo: .title))
+                        .font(Font.custom("Montserrat-SemiBold", size: 16, relativeTo: .title))
                     
                     Group {
                         Text(doctor.medicalSpeciality.rawValue)
-                            .font(Font.custom("Montserrat-Regular", size: 14, relativeTo: .subheadline))
+                            .font(Font.custom("Montserrat-Regular", size: 12, relativeTo: .subheadline))
                         
                         DoctorServicesCardView(services: doctor.services)
-                            .font(Font.custom("Montserrat-Regular", size: 12, relativeTo: .subheadline))
+                            .font(Font.custom("Montserrat-Regular", size: 10, relativeTo: .subheadline))
                             
 
                     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -41,7 +41,7 @@ struct DoctorRowView: View {
                         Image(systemName: "person.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 120, height: 120)
+                            .frame(width: 90, height: 90)
                         
                         
                     Label("\(validations.getAverageOfEvaluations(doctor: doctor), format: .number.precision(.fractionLength(1)))/5.0", systemImage: "star.fill")
@@ -49,7 +49,7 @@ struct DoctorRowView: View {
                         .environment(\.layoutDirection, .rightToLeft)
                         
                 }
-                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 12))
+                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 14))
                 
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)

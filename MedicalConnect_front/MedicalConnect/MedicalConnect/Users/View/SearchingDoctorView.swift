@@ -47,9 +47,6 @@ struct SearchingDoctorView: View {
             
             NavigationStack {
 
-        
-
-                
                 List {
                     
                     Section {

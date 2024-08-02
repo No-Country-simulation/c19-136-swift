@@ -20,6 +20,7 @@ struct TestData {
     var doctors: [Doctor] = []
     let services : [Service]
     let service: Service
+    let paymentsMethodPatient1 : [PaymentMethod]
         
     
     
@@ -27,7 +28,7 @@ struct TestData {
         self.patient1 = Patient(
             user: User(
                 name: "Giuliana Giraud",
-                email: "giuliana.giraud@example.com",
+                email: "giuliana.giraud@gmail.com",
                 password: "123456ABc!",
                 phone: "075 871 61 23",
                 typeOfUser: .patient
@@ -36,7 +37,22 @@ struct TestData {
             photo: nil,
             birthdate: Date(),
             allergies: "Penicilina",
-            gender: .FEMALE
+            gender: .FEMALE,
+            paymentMethods: [
+                PaymentMethod(
+                    name: "Mastercard 1441",
+                    cardNumber: "1524632525811441",
+                    expiredDate: "05/29",
+                    cvv: "123"
+      
+                ),
+                PaymentMethod(
+                    name: "Visa 1454",
+                    cardNumber: "1524632525811454",
+                    expiredDate: "05/27",
+                    cvv: "123"
+                )
+            ]
         )
         
         self.patient2 = Patient(
@@ -46,12 +62,29 @@ struct TestData {
                 password: "123456ABc!",
                 phone: "055-831-663",
                 typeOfUser: .patient
+                
+                
             ),
             
             photo: nil,
             birthdate: Date(),
             allergies: "Triaxona",
-            gender: .MALE
+            gender: .MALE,
+            paymentMethods: [
+                PaymentMethod(
+                    name: "Mastercard 1441",
+                    cardNumber: "1524632525811441",
+                    expiredDate: "05/29",
+                    cvv: "123"
+      
+                ),
+                PaymentMethod(
+                    name: "Visa 1454",
+                    cardNumber: "1524632525811454",
+                    expiredDate: "05/27",
+                    cvv: "123"
+                )
+            ]
         )
         
         self.patient3 = Patient(
@@ -66,7 +99,22 @@ struct TestData {
             photo: nil,
             birthdate: Date(),
             allergies: "Penicilina",
-            gender: .FEMALE
+            gender: .FEMALE,
+            paymentMethods: [
+                PaymentMethod(
+                    name: "Mastercard 1441",
+                    cardNumber: "1524632525811441",
+                    expiredDate: "05/29",
+                    cvv: "123"
+      
+                ),
+                PaymentMethod(
+                    name: "Visa 1454",
+                    cardNumber: "1524632525811454",
+                    expiredDate: "05/27",
+                    cvv: "123"
+                )
+            ]
         )
         
         self.doctor1 = Doctor(
@@ -104,7 +152,7 @@ struct TestData {
                         reviewDescription: "La doc fue increíble con mi pequeño, fuimos muy preocupados y ella nos dio la tranquilidad que necesitábamos")
                 
                 ]
-            )
+            ), servicePrice: 17
         )
         
        
@@ -143,7 +191,7 @@ struct TestData {
                         reviewDescription: "Su enfoque integral y personalizado ha hecho una gran diferencia en mi salud. Además, su equipo siempre es amable y eficiente")
                 
                 ]
-            )
+            ), servicePrice: 17
         )
         
         self.doctor3 = Doctor(
@@ -181,7 +229,7 @@ struct TestData {
                         reviewDescription: "La doc fue increíble con mi pequeño, fuimos muy preocupados y ella nos dio la tranquilidad que necesitábamos")
                 
                 ]
-            )
+            ), servicePrice: 18
         )
         
         
@@ -201,6 +249,22 @@ struct TestData {
         ]
         
         self.service = Service(title: .auth)
+        
+        self.paymentsMethodPatient1 = [
+            PaymentMethod(
+                name: "Mastercard 1441",
+                cardNumber: "1524632525811441",
+                expiredDate: "05/29",
+                cvv: "123"
+  
+            ),
+            PaymentMethod(
+                name: "Visa 1454",
+                cardNumber: "1524632525811454",
+                expiredDate: "05/27",
+                cvv: "123"
+            )
+        ]
 
     }
     

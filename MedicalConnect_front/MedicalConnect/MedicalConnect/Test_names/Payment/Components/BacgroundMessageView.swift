@@ -9,11 +9,11 @@ import SwiftUI
 
 struct BacgroundMessageView: View {
     private let message: String = "Podrás ver los detalles en el menú MIS CITAS, ingresando a tu perfil."
-   private let submessage: String = "Allí podrás crear un recordatorio si lo deseas y te enviaremos una notificación el día anterior a la consulta."
+    private let submessage: String = "Allí podrás crear un recordatorio si lo deseas y te enviaremos una notificación el día anterior a la consulta."
     
     var body: some View {
         
-
+        VStack {
             RoundedRectangle(cornerRadius: 12)
                 .fill(.mint)
                 .opacity(0.3)
@@ -39,6 +39,24 @@ struct BacgroundMessageView: View {
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
                 }
                 .frame(height: 260)
+            
+            Button(action: {
+                // confirmAppointment = true
+                print("Realizar pago")
+            }, label: {
+                Text("Volver a Home")
+                    .padding(.horizontal, 24)
+                    .font(Font.custom("Montserrat-SemiBold", size: 16))
+                    .kerning(1.2)
+            })
+            .buttonStyle(MainButtonStyle(isEnabled: true))
+            .padding(.vertical, 12)
+        }
+        .navigationBarBackButtonHidden()
+        .padding(.horizontal, 16)
+        
+        
+        
         
     }
 }

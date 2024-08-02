@@ -39,7 +39,7 @@ class DoctorManager: ObservableObject {
                                 evaluation: 0,
                                 reviewDescription: "Aún no tiene evaluaciones"
                             )]
-        ))
+                        ), servicePrice: 0.00)
     ) {
         self.doctor = doctor
         setupValidation()

@@ -11,9 +11,13 @@ struct ProfileDocView: View {
     
     let doctor: Doctor
     private let validations: DoctorDataValidations = DoctorDataValidations()
+    @EnvironmentObject private var routeManager : NavigationRouter
+    @State private var nextView: Bool = false
 
     @State var scheduleAccess: Bool = false
 
+    
+    let test = TestData()
     var body: some View {
        
             
@@ -33,6 +37,10 @@ struct ProfileDocView: View {
                     
                     
                     Button(action: {
+                        
+                        nextView = true
+                        //routeManager.push(to: <#T##Route#>)
+                        
                         print("Agendar consulta")
                     }, label: {
                         Text("Agendar consulta")
@@ -42,7 +50,9 @@ struct ProfileDocView: View {
                     })
                     .buttonStyle(MainButtonStyle(isEnabled: true))
                     .padding(.vertical, 12)
-                    
+                    .navigationDestination(isPresented: $nextView) {
+                        SchedulePayAppoinmentView(doctor: doctor, patient: test.patient1)
+                    }
                     
                     VStack{
                         Text("Reseñas")
@@ -61,8 +71,6 @@ struct ProfileDocView: View {
                                         evaluation: review.evaluation,
                                         review: validations.getReviewDescription(review: review.reviewDescription)
                                     )
-                                    
-                                    
                                 }
                             }
                         }
@@ -76,6 +84,7 @@ struct ProfileDocView: View {
                 
 
             }
+            .environmentObject(routeManager)
     }
 }
 
@@ -85,4 +94,5 @@ struct ProfileDocView: View {
     let test = TestData()
     
     return ProfileDocView(doctor: test.doctor1)
+        .environmentObject(NavigationRouter())
 }
