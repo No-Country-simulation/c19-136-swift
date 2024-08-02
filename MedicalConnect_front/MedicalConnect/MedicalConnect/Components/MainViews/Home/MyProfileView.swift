@@ -23,25 +23,28 @@ struct MyProfileView: View {
 //        NavigationStack{
             VStack {
                 
-                //            PatientDataFrameView(
-                //                name: <#T##String#>,
-                //                age: <#T##Int#>,
-                //                hasAllergies: <#T##String#>,
-                //                gender: <#T##Gender#>,
-                //                appointmentsMade: <#T##Int#>
-                //            )
+                Text("Mi Perfil")
+                    .font(Font.custom("Montserrat-Bold", size: 20))
+                    .padding(16)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .background(.main)
                 
                 List(allMenus){ option in
-                    NavigationLink(option.title.rawValue, value: option)
-                        .frame(height: 40)
+
+                    NavigationLink(value: Route.login(.profile(.details(item: option)))) {
+                        Text(option.title.rawValue)
+                    }
+                    .frame(height: 40)
+                    
+//                    NavigationLink(option.title.rawValue, value: option)
+//                        .frame(height: 40)
                     
                 }
-                .navigationTitle("Mi Perfil")
-                .navigationDestination(for: MyMenu.self, destination: { option in
-                    Text(option.title.rawValue)
-                })
+               
+                .navigationDestination(for: Route.self, destination: { $0 })
                 .listStyle(InsetListStyle())
-                .navigationTitle("Mi Perfil")
+                
             }
 //        }
     }

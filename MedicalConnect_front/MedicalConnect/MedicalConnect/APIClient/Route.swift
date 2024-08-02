@@ -22,15 +22,10 @@ enum Route {
         case patient(user: User)
     }
     
-    
-//    case doctorProfile
-//    case Appointment
-//    case scheduleAppointment
-//    case myPeofile
-//    case myData
-//    case myMedicalHistory
-//    case myAppointments
-//    case config
+
+
+
+
     
     enum TabViewRoute: Hashable{
         case home(HomeRoute)
@@ -54,8 +49,23 @@ enum Route {
     
     enum ProfileRoute: Hashable {
         case list
-    //    case details(item: MyMenu)
+        case details(item: MyMenu)
+        
+   
+       
+        
     }
+    
+    
+//    enum ProfileOptions: Hashable {
+//        case myData
+//        case myAppointments
+//        case myMedicalStudiesHistory
+//        case myMedicalRecordsHistory
+//    }
+    
+    
+    
     
 }
 
@@ -125,8 +135,21 @@ extension Route: View {
                         switch option{
                             case .list:
                                 MainTabView()
-                               // MainTabView(tabViewRoute: .profile(.list))
                             
+                            case .details(let item):
+                                switch item.title {
+                                    case .myData:
+                                        MyDataView()
+                                    case .myAppointments:
+                                        MyAppointmentsHistoryView()
+                                    case .myStudies:
+                                        myMedicalStudiesHistoryView()
+                                    case .treatments:
+                                        MyMedicalRecordsHistory()
+                                }
+                                
+
+ 
                         }
                 
                 }

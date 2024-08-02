@@ -14,7 +14,7 @@
 		70205E202C58C7C400B7381B /* MyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E1F2C58C7C400B7381B /* MyDataView.swift */; };
 		70205E222C58C9A500B7381B /* MyAppointmentsHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E212C58C9A500B7381B /* MyAppointmentsHistoryView.swift */; };
 		70205E242C58C9F000B7381B /* MyAppointmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E232C58C9F000B7381B /* MyAppointmentRowView.swift */; };
-		70205E262C58CDB800B7381B /* MyScheduledAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E252C58CDB800B7381B /* MyScheduledAppointmentsView.swift */; };
+		70205E262C58CDB800B7381B /* MyMedicalRecordsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E252C58CDB800B7381B /* MyMedicalRecordsHistory.swift */; };
 		70205E282C58CE9900B7381B /* AppointmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70205E272C58CE9900B7381B /* AppointmentCardView.swift */; };
 		70220A452C56281100ADAA7B /* ProfileDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70220A442C56281100ADAA7B /* ProfileDocView.swift */; };
 		702B37472C543B3E003BF42D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702B37462C543B3D003BF42D /* Montserrat-Regular.ttf */; };
@@ -59,6 +59,7 @@
 		7087A2012C5A09DD00A3CEFB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087A2002C5A09DD00A3CEFB /* Router.swift */; };
 		7087A2032C5A17A600A3CEFB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087A2022C5A17A600A3CEFB /* Parser.swift */; };
 		70C682422C5CB94500B56003 /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C682412C5CB94500B56003 /* ServiceDetailView.swift */; };
+		70C6825E2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6825D2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift */; };
 		70C7263E2C5A9F54009FB7B0 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */; };
 		70C726402C5AA002009FB7B0 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C7263F2C5AA002009FB7B0 /* Route.swift */; };
 		70C726432C5AABE0009FB7B0 /* OnbordingValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C726422C5AABE0009FB7B0 /* OnbordingValidations.swift */; };
@@ -91,7 +92,7 @@
 		70205E1F2C58C7C400B7381B /* MyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataView.swift; sourceTree = "<group>"; };
 		70205E212C58C9A500B7381B /* MyAppointmentsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsHistoryView.swift; sourceTree = "<group>"; };
 		70205E232C58C9F000B7381B /* MyAppointmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAppointmentRowView.swift; path = MedicalConnect/Users/Patient/View/MyAppointmentRowView.swift; sourceTree = SOURCE_ROOT; };
-		70205E252C58CDB800B7381B /* MyScheduledAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduledAppointmentsView.swift; sourceTree = "<group>"; };
+		70205E252C58CDB800B7381B /* MyMedicalRecordsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMedicalRecordsHistory.swift; sourceTree = "<group>"; };
 		70205E272C58CE9900B7381B /* AppointmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppointmentCardView.swift; path = MedicalConnect/Users/Patient/View/AppointmentCardView.swift; sourceTree = SOURCE_ROOT; };
 		70220A442C56281100ADAA7B /* ProfileDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDocView.swift; sourceTree = "<group>"; };
 		702B37462C543B3D003BF42D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 		7087A2002C5A09DD00A3CEFB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7087A2022C5A17A600A3CEFB /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		70C682412C5CB94500B56003 /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
+		70C6825D2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMedicalStudiesHistoryView.swift; sourceTree = "<group>"; };
 		70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationRouter.swift; path = MedicalConnect/APIClient/NavigationRouter.swift; sourceTree = SOURCE_ROOT; };
 		70C7263F2C5AA002009FB7B0 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Route.swift; path = MedicalConnect/APIClient/Route.swift; sourceTree = SOURCE_ROOT; };
 		70C726422C5AABE0009FB7B0 /* OnbordingValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnbordingValidations.swift; path = MedicalConnect/APIClient/OnbordingValidations.swift; sourceTree = SOURCE_ROOT; };
@@ -259,7 +261,8 @@
 				70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */,
 				70205E1F2C58C7C400B7381B /* MyDataView.swift */,
 				70205E212C58C9A500B7381B /* MyAppointmentsHistoryView.swift */,
-				70205E252C58CDB800B7381B /* MyScheduledAppointmentsView.swift */,
+				70205E252C58CDB800B7381B /* MyMedicalRecordsHistory.swift */,
+				70C6825D2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,7 +618,7 @@
 				7071547A2C58BBE10044511C /* MyMenu.swift in Sources */,
 				70FBEF492C54CA14004FDA53 /* PatientSignupFormView.swift in Sources */,
 				70FBEF4F2C54D19B004FDA53 /* BigFrameTextFieldView.swift in Sources */,
-				70205E262C58CDB800B7381B /* MyScheduledAppointmentsView.swift in Sources */,
+				70205E262C58CDB800B7381B /* MyMedicalRecordsHistory.swift in Sources */,
 				70C726452C5ABCBA009FB7B0 /* DataManager.swift in Sources */,
 				70D9B5B52C56F18D00E507DD /* TestData.swift in Sources */,
 				703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */,
@@ -649,6 +652,7 @@
 				70C726402C5AA002009FB7B0 /* Route.swift in Sources */,
 				7087A2032C5A17A600A3CEFB /* Parser.swift in Sources */,
 				70856FD12C584D96009C9B74 /* ScheduledAppointmentView.swift in Sources */,
+				70C6825E2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift in Sources */,
 				702B37642C549D80003BF42D /* UpperFrame.swift in Sources */,
 				7087A1ED2C5992D400A3CEFB /* User.swift in Sources */,
 				70856FD52C58523B009C9B74 /* BacgroundMessageView.swift in Sources */,

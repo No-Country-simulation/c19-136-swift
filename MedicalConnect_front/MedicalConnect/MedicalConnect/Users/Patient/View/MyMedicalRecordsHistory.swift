@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct MyScheduledAppointmentsView: View {
+struct MyMedicalRecordsHistory: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    MyScheduledAppointmentsView()
+    MyMedicalRecordsHistory()
 }
