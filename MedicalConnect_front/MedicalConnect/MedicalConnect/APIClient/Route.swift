@@ -14,14 +14,15 @@ enum Route {
     case signup
     case login
     case signupForm(UserRoute)
-    case results(Doctor)
+    case home(Doctor)
     
     
     enum UserRoute: Hashable {
         case doctor(user: User)
         case patient(user: User)
     }
-//    case results
+    
+    
 //    case doctorProfile
 //    case Appointment
 //    case scheduleAppointment
@@ -31,18 +32,30 @@ enum Route {
 //    case myAppointments
 //    case config
     
-    enum DoctorRoute: Hashable {
-        case home
-        case details
+    enum TabViewRoute: Hashable{
+        case home(HomeRoute)
+        case configure(Service)
+        case profile(Patient)
     }
     
     
-    enum PatientRoute: Hashable {
-        case home
-        case details
+    enum HomeRoute: Hashable {
+        case list
+        case details(doctor: Doctor)
     }
     
     
+    enum ConfigureRoute: Hashable {
+        case home
+        case list
+        case details(item: Service)
+    }
+    
+    
+    enum ProfileRoute: Hashable {
+        case list
+        case details(item: MyMenu)
+    }
     
 }
 
@@ -65,7 +78,7 @@ extension Route: Hashable {
             case (.signupForm(let lhsUser), .signupForm(let rhsUser)):
                 return lhsUser == rhsUser
                 
-            case (.results(let lhsDoctor), .results(let rhsDoctor)):
+            case (.home(let lhsDoctor), .home(let rhsDoctor)):
                 return lhsDoctor == rhsDoctor
             default:
                 return false
@@ -82,7 +95,9 @@ extension Route: View {
     var body: some View{
         switch self {
             case .login:
-                HomeView()
+                //HomeView()
+                MainTabView()
+                
                 
             case .signup:
                     SignUpView()
@@ -97,12 +112,9 @@ extension Route: View {
                     case .patient(user: let user):
                        // DoctorSignupFormView(user: user)
                         PatientSignupFormView(user: user)
-
                 }
-                
-            
-            case .results( let item ):
-//                DoctorRowView(doctor: item)
+
+            case .home( let item ):
                 ProfileDocView(doctor: item)
 
         }

@@ -2,13 +2,13 @@
 //  ConfigView.swift
 //  MedicalConnect
 //
-//  Created by Dulce Itamar Vigueras Ballesteros on 27/07/24.
+ // Created by Dulce Itamar Vigueras Ballesteros on 27/07/24.
 //
 
 import SwiftUI
 
 struct ConfigView: View {
-    let configServices: [Services] = [
+    let configServices: [Service] = [
         
         .init(title: .notifications ),
         .init(title: .payment),
@@ -22,7 +22,7 @@ struct ConfigView: View {
     ]
     
     var body: some View {
-        NavigationStack {
+        
             
    
          
@@ -32,16 +32,15 @@ struct ConfigView: View {
                            
                              }
                          
-                             .navigationTitle("Configuración")
-                             .navigationDestination(for: Services.self, destination: { service in
+                        
+                             .navigationDestination(for: Service.self, destination: { service in
                                  Text(service.title.rawValue)
                              })
                              
                              .listStyle(InsetListStyle())
-            
-          
-                    
-        }
+                             .navigationTitle("Configuración")
+        
+         
 
     }
 }

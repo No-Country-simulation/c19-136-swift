@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Services: Hashable, Identifiable {
+struct Service: Hashable, Identifiable {
     var id = UUID()
     let title: ConfigServices
     

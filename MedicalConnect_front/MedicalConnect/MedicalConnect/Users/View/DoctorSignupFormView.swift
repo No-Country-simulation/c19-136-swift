@@ -72,7 +72,7 @@ struct DoctorSignupFormView: View {
                     print(doctorManager.doctor.user.name)
                     print("Saving patient data...")
                 }, label: {
-                    Text("Continuar")
+                    Text("Registrar")
                         .padding(.horizontal, 24)
                         .font(Font.custom("Montserrat-SemiBold", size: 16))
                         .kerning(1.2)

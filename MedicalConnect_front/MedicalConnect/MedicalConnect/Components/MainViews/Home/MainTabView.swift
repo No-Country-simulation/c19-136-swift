@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainTabView: View {
     
+   //
+    
     var body: some View {
         
         TabView {
@@ -37,7 +39,7 @@ struct MainTabView: View {
             
             UITabBar.appearance().barTintColor = UIColor.gray
           }
-       
+        .navigationBarBackButtonHidden()
         .tint(.babyBlue200)
        
         

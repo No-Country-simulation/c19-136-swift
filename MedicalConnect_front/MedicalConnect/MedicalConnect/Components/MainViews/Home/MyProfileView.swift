@@ -20,7 +20,7 @@ struct MyProfileView: View {
     var body: some View {
        
         
-        NavigationStack{
+//        NavigationStack{
             VStack {
                 
                 //            PatientDataFrameView(
@@ -41,8 +41,9 @@ struct MyProfileView: View {
                     Text(option.title.rawValue)
                 })
                 .listStyle(InsetListStyle())
+                .navigationTitle("Mi Perfil")
             }
-        }
+//        }
     }
 }
 

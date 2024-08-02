@@ -45,16 +45,16 @@ struct SignUpView: View {
                     }
                     
                     
-                    print("Registrar")
+                    print("Continuar")
                     print("\(userManager.user.name)")
                 }, label: {
-                    Text("Registrar")
+                    Text("Continuar")
                         .padding(.horizontal, 24)
                         .font(Font.custom("Montserrat-SemiBold", size: 16))
                         .kerning(1.2)
                 })
             
-                .buttonStyle(MainButtonStyle(isEnabled: true /*userManager.signupAccess*/))
+                .buttonStyle(MainButtonStyle(isEnabled:  userManager.signupAccess))
                 .padding(.bottom, 12)
                
             

@@ -31,7 +31,7 @@
 		702B37662C549F8A003BF42D /* UIDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B37652C549F8A003BF42D /* UIDeviceOrientation.swift */; };
 		702B37692C54BA95003BF42D /* TypeOfUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B37682C54BA95003BF42D /* TypeOfUsers.swift */; };
 		703A4ED72C55AE5200ECA09B /* ConfigServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4ED62C55AE5200ECA09B /* ConfigServices.swift */; };
-		703A4ED92C55B1BB00ECA09B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4ED82C55B1BB00ECA09B /* Services.swift */; };
+		703A4ED92C55B1BB00ECA09B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4ED82C55B1BB00ECA09B /* Service.swift */; };
 		703A4EDE2C55C9BC00ECA09B /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EDD2C55C9BC00ECA09B /* Doctor.swift */; };
 		703A4EE22C55CBB800ECA09B /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE12C55CBB800ECA09B /* Patient.swift */; };
 		703A4EE42C55CF1800ECA09B /* DoctorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A4EE32C55CF1800ECA09B /* DoctorRowView.swift */; };
@@ -42,6 +42,7 @@
 		703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703AE8E92C52A16F007FEC4C /* StartingView.swift */; };
 		703AE8EC2C52A172007FEC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EB2C52A172007FEC4C /* Assets.xcassets */; };
 		703AE8EF2C52A172007FEC4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703AE8EE2C52A172007FEC4C /* Preview Assets.xcassets */; };
+		70645B762C5C362800195C96 /* DoctorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70645B752C5C362800195C96 /* DoctorManager.swift */; };
 		7071546F2C587D770044511C /* ScheduleAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071546E2C587D770044511C /* ScheduleAppointmentView.swift */; };
 		707154712C587D960044511C /* CelendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707154702C587D960044511C /* CelendarView.swift */; };
 		707154762C58883F0044511C /* PatientDataFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707154752C58883F0044511C /* PatientDataFrameView.swift */; };
@@ -107,7 +108,7 @@
 		702B37652C549F8A003BF42D /* UIDeviceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceOrientation.swift; sourceTree = "<group>"; };
 		702B37682C54BA95003BF42D /* TypeOfUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfUsers.swift; sourceTree = "<group>"; };
 		703A4ED62C55AE5200ECA09B /* ConfigServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigServices.swift; sourceTree = "<group>"; };
-		703A4ED82C55B1BB00ECA09B /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		703A4ED82C55B1BB00ECA09B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		703A4EDD2C55C9BC00ECA09B /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		703A4EE12C55CBB800ECA09B /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		703A4EE32C55CF1800ECA09B /* DoctorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorRowView.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 		703AE8E92C52A16F007FEC4C /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		703AE8EB2C52A172007FEC4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703AE8EE2C52A172007FEC4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70645B752C5C362800195C96 /* DoctorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorManager.swift; sourceTree = "<group>"; };
 		7071546E2C587D770044511C /* ScheduleAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentView.swift; sourceTree = "<group>"; };
 		707154702C587D960044511C /* CelendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelendarView.swift; sourceTree = "<group>"; };
 		707154752C58883F0044511C /* PatientDataFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientDataFrameView.swift; path = MedicalConnect/Users/Patient/View/PatientDataFrameView.swift; sourceTree = SOURCE_ROOT; };
@@ -265,7 +267,7 @@
 			children = (
 				703A4EDC2C55C16900ECA09B /* Views */,
 				703A4ED62C55AE5200ECA09B /* ConfigServices.swift */,
-				703A4ED82C55B1BB00ECA09B /* Services.swift */,
+				703A4ED82C55B1BB00ECA09B /* Service.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -508,6 +510,7 @@
 				70FBEF502C54DDF7004FDA53 /* MedicalSpeality.swift */,
 				7087A1EE2C599B1400A3CEFB /* WorkDays.swift */,
 				7005D7902C5B4D2700F6C234 /* Doctor Suffix.swift */,
+				70645B752C5C362800195C96 /* DoctorManager.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -647,7 +650,7 @@
 				7087A1ED2C5992D400A3CEFB /* User.swift in Sources */,
 				70856FD52C58523B009C9B74 /* BacgroundMessageView.swift in Sources */,
 				70FBEF532C54E1E1004FDA53 /* HomeView.swift in Sources */,
-				703A4ED92C55B1BB00ECA09B /* Services.swift in Sources */,
+				703A4ED92C55B1BB00ECA09B /* Service.swift in Sources */,
 				70C726432C5AABE0009FB7B0 /* OnbordingValidations.swift in Sources */,
 				70D55B502C556A360025D84D /* MyProfileView.swift in Sources */,
 				702B37572C547CA2003BF42D /* TextFieldSecurityView.swift in Sources */,
@@ -668,6 +671,7 @@
 				70D9B5B02C56D2ED00E507DD /* Review.swift in Sources */,
 				70FBEF472C54C72B004FDA53 /* DoctorSignupFormView.swift in Sources */,
 				70205E1E2C58C37100B7381B /* MyDataFrameView.swift in Sources */,
+				70645B762C5C362800195C96 /* DoctorManager.swift in Sources */,
 				7005D7932C5B6FE000F6C234 /* PatientManager.swift in Sources */,
 				70FE4F212C572B0800E10A7F /* DoctorDataValidations.swift in Sources */,
 				703A4ED72C55AE5200ECA09B /* ConfigServices.swift in Sources */,

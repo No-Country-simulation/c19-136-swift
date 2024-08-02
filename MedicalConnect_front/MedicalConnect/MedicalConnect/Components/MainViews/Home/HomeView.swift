@@ -28,7 +28,7 @@ struct HomeView: View {
                     
                     ForEach(example.doctors, id: \.self){ doctor in
                 
-                        NavigationLink(value: Route.results(doctor)) {
+                        NavigationLink(value: Route.home(doctor)) {
                             DoctorRowView(doctor: doctor)
                         }
                     }
