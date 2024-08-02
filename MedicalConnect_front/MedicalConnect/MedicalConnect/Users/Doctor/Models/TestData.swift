@@ -19,6 +19,7 @@ struct TestData {
     
     var doctors: [Doctor] = []
     let services : [Service]
+    let service: Service
         
     
     
@@ -198,6 +199,8 @@ struct TestData {
 
 
         ]
+        
+        self.service = Service(title: .auth)
 
     }
     

@@ -47,7 +47,7 @@ enum Route {
     
     enum ConfigureRoute: Hashable {
         case list
-     //   case details(item: Service)
+        case details(item: Service)
         //case details()
     }
     
@@ -91,6 +91,8 @@ extension Route: Hashable {
 }
 
 
+
+
 extension Route: View {
     
     var body: some View{
@@ -111,7 +113,8 @@ extension Route: View {
                                     MainTabView()
 //                                MainTabView(tabViewRoute: .configure(.list))
                                 
-                         //   case .details(item: let service):
+                            case .details(item: let service):
+                                ServiceDetailView(service: service)
                                 
                         }
                             
