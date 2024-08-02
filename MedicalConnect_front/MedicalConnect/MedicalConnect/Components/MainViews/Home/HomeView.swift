@@ -12,16 +12,51 @@ struct HomeView: View {
     
     let example = TestData()
     let showData = DoctorDataValidations()
-    
+    @State private var searchDoctorBySpeciality: Bool = false
     
    
     var body: some View {
         VStack {
                 UpperFrame(label: "Encuentra el profesional que necesitas")
                 
+            
+            Button {
                 
-                SearchBarView(prompt: "Busca por especialidad", keyboard: .asciiCapable)
-                    .padding(.bottom, 10)
+                searchDoctorBySpeciality = true
+                print("Buscar medicos")
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.gray)
+                        .opacity(0.2)
+                      
+                
+                    HStack{
+                        Image(systemName: "magnifyingglass")
+                            .foregroundStyle(.secondary)
+                       Text("Buscar por especialidad")
+                            
+
+                    }
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .padding(.horizontal, 8)
+                    
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(height: 42)
+                .padding(.horizontal, 10)
+            }
+            .tint(.gray)
+
+            .fullScreenCover(isPresented: $searchDoctorBySpeciality, content: {
+                SearchingDoctorView()
+            })
+            
+    
+
+
+                
+
                 
                 ScrollView{
                     HeaderView(title: "Últimos médicos agregados")

@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBarView: View {
     let prompt: String
     let keyboard: UIKeyboardType
-    @State var data: String = ""
+    @Binding var data: String
     var body: some View {
         
     
@@ -38,7 +38,8 @@ struct SearchBarView: View {
     }}
 
 #Preview {
-    SearchBarView( prompt: "Busca por especialidad", keyboard: .asciiCapable)
+    @State var data: String = ""
+    return SearchBarView( prompt: "Busca por especialidad", keyboard: .asciiCapable, data: $data)
 }
 
 

@@ -19,8 +19,7 @@ struct MyProfileView: View {
     
     var body: some View {
        
-        
-//        NavigationStack{
+
             VStack {
                 
                 Text("Mi Perfil")
@@ -36,9 +35,7 @@ struct MyProfileView: View {
                         Text(option.title.rawValue)
                     }
                     .frame(height: 40)
-                    
-//                    NavigationLink(option.title.rawValue, value: option)
-//                        .frame(height: 40)
+
                     
                 }
                
@@ -46,7 +43,7 @@ struct MyProfileView: View {
                 .listStyle(InsetListStyle())
                 
             }
-//        }
+
     }
 }
 

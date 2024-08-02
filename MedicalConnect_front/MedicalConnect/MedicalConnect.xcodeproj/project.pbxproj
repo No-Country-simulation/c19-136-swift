@@ -60,6 +60,7 @@
 		7087A2032C5A17A600A3CEFB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087A2022C5A17A600A3CEFB /* Parser.swift */; };
 		70C682422C5CB94500B56003 /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C682412C5CB94500B56003 /* ServiceDetailView.swift */; };
 		70C6825E2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6825D2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift */; };
+		70C682602C5CEAC500B56003 /* SearchingDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6825F2C5CEAC500B56003 /* SearchingDoctorView.swift */; };
 		70C7263E2C5A9F54009FB7B0 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */; };
 		70C726402C5AA002009FB7B0 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C7263F2C5AA002009FB7B0 /* Route.swift */; };
 		70C726432C5AABE0009FB7B0 /* OnbordingValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C726422C5AABE0009FB7B0 /* OnbordingValidations.swift */; };
@@ -140,6 +141,7 @@
 		7087A2022C5A17A600A3CEFB /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		70C682412C5CB94500B56003 /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
 		70C6825D2C5CDEF700B56003 /* myMedicalStudiesHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMedicalStudiesHistoryView.swift; sourceTree = "<group>"; };
+		70C6825F2C5CEAC500B56003 /* SearchingDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingDoctorView.swift; sourceTree = "<group>"; };
 		70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationRouter.swift; path = MedicalConnect/APIClient/NavigationRouter.swift; sourceTree = SOURCE_ROOT; };
 		70C7263F2C5AA002009FB7B0 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Route.swift; path = MedicalConnect/APIClient/Route.swift; sourceTree = SOURCE_ROOT; };
 		70C726422C5AABE0009FB7B0 /* OnbordingValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnbordingValidations.swift; path = MedicalConnect/APIClient/OnbordingValidations.swift; sourceTree = SOURCE_ROOT; };
@@ -527,6 +529,7 @@
 				70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */,
 				703A4EE32C55CF1800ECA09B /* DoctorRowView.swift */,
 				70220A442C56281100ADAA7B /* ProfileDocView.swift */,
+				70C6825F2C5CEAC500B56003 /* SearchingDoctorView.swift */,
 			);
 			name = View;
 			path = ../View;
@@ -632,6 +635,7 @@
 				7005D7912C5B4D2700F6C234 /* Doctor Suffix.swift in Sources */,
 				7071546F2C587D770044511C /* ScheduleAppointmentView.swift in Sources */,
 				702B37662C549F8A003BF42D /* UIDeviceOrientation.swift in Sources */,
+				70C682602C5CEAC500B56003 /* SearchingDoctorView.swift in Sources */,
 				70D9B5B22C56E7C000E507DD /* DoctorEvaluationData.swift in Sources */,
 				703A4EE22C55CBB800ECA09B /* Patient.swift in Sources */,
 				7087A2012C5A09DD00A3CEFB /* Router.swift in Sources */,

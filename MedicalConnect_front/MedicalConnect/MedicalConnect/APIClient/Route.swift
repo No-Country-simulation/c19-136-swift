@@ -22,10 +22,6 @@ enum Route {
         case patient(user: User)
     }
     
-
-
-
-
     
     enum TabViewRoute: Hashable{
         case home(HomeRoute)
@@ -51,21 +47,7 @@ enum Route {
         case list
         case details(item: MyMenu)
         
-   
-       
-        
     }
-    
-    
-//    enum ProfileOptions: Hashable {
-//        case myData
-//        case myAppointments
-//        case myMedicalStudiesHistory
-//        case myMedicalRecordsHistory
-//    }
-    
-    
-    
     
 }
 
@@ -88,9 +70,6 @@ extension Route: Hashable {
             case (.signupForm(let lhsUser), .signupForm(let rhsUser)):
                 return lhsUser == rhsUser
                 
-                
-//            case (.home(let lhsDoctor), .home(let rhsDoctor)):
-//                return lhsDoctor == rhsDoctor
             default:
                 return false
   
@@ -121,8 +100,6 @@ extension Route: View {
                         switch option{
                             case .list:
                                     MainTabView()
-//                                MainTabView(tabViewRoute: .configure(.list))
-                                
                             case .details(item: let service):
                                 ServiceDetailView(service: service)
                                 
@@ -147,20 +124,10 @@ extension Route: View {
                                     case .treatments:
                                         MyMedicalRecordsHistory()
                                 }
-                                
-
- 
                         }
                 
                 }
-                
-                //MainTabView(tabViewRoute: tabViewRoute)
-                //HomeView()
-                
 
-                
-                
-                
             case .signup:
                     SignUpView()
                 
@@ -172,13 +139,9 @@ extension Route: View {
                     case .doctor(user: let user):
                         DoctorSignupFormView(user: user)
                     case .patient(user: let user):
-                       // DoctorSignupFormView(user: user)
+
                         PatientSignupFormView(user: user)
                 }
-
-//            case .home( let item ):
-//                ProfileDocView(doctor: item)
-
         }
     }
     
