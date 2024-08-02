@@ -49,7 +49,8 @@ struct OnboardingView: View {
                     Group {
                         Button(action: {
                             loginAccess = true
-                            routeManager.routes.append(.login)
+                            routeManager.routes.append(.login(.home(.list)))
+                            //routeManager.routes.append(.login)
                             print("Ingresando ...")
                             
                         }, label: {
@@ -78,9 +79,9 @@ struct OnboardingView: View {
                         .tint(.black)
                         .padding(.bottom, 8)
                         
-                        Text("ó")
-                            .font(Font.custom("Montserrat-Regular", size: 12))
-                            .padding(.bottom, 8)
+//                        Text("ó")
+//                            .font(Font.custom("Montserrat-Regular", size: 12))
+//                            .padding(.bottom, 8)
                         
                         
                         //                        Button {

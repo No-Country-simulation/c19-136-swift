@@ -27,8 +27,8 @@ struct HomeView: View {
                     HeaderView(title: "Últimos médicos agregados")
                     
                     ForEach(example.doctors, id: \.self){ doctor in
-                
-                        NavigationLink(value: Route.home(doctor)) {
+                     
+                        NavigationLink(value: Route.login(.home(.details(doctor: doctor)))) {
                             DoctorRowView(doctor: doctor)
                         }
                     }

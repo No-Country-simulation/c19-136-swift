@@ -58,6 +58,7 @@
 		7087A1FD2C59DA9300A3CEFB /* AllPatientEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087A1FC2C59DA9300A3CEFB /* AllPatientEndpoints.swift */; };
 		7087A2012C5A09DD00A3CEFB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087A2002C5A09DD00A3CEFB /* Router.swift */; };
 		7087A2032C5A17A600A3CEFB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087A2022C5A17A600A3CEFB /* Parser.swift */; };
+		70C682422C5CB94500B56003 /* ServicesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C682412C5CB94500B56003 /* ServicesDetailView.swift */; };
 		70C7263E2C5A9F54009FB7B0 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */; };
 		70C726402C5AA002009FB7B0 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C7263F2C5AA002009FB7B0 /* Route.swift */; };
 		70C726432C5AABE0009FB7B0 /* OnbordingValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C726422C5AABE0009FB7B0 /* OnbordingValidations.swift */; };
@@ -136,6 +137,7 @@
 		7087A1FC2C59DA9300A3CEFB /* AllPatientEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllPatientEndpoints.swift; path = MedicalConnect/APIClient/AllPatientEndpoints.swift; sourceTree = SOURCE_ROOT; };
 		7087A2002C5A09DD00A3CEFB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7087A2022C5A17A600A3CEFB /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		70C682412C5CB94500B56003 /* ServicesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesDetailView.swift; sourceTree = "<group>"; };
 		70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationRouter.swift; path = MedicalConnect/APIClient/NavigationRouter.swift; sourceTree = SOURCE_ROOT; };
 		70C7263F2C5AA002009FB7B0 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Route.swift; path = MedicalConnect/APIClient/Route.swift; sourceTree = SOURCE_ROOT; };
 		70C726422C5AABE0009FB7B0 /* OnbordingValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnbordingValidations.swift; path = MedicalConnect/APIClient/OnbordingValidations.swift; sourceTree = SOURCE_ROOT; };
@@ -299,6 +301,7 @@
 		703A4EDC2C55C16900ECA09B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70C682412C5CB94500B56003 /* ServicesDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				70856FD52C58523B009C9B74 /* BacgroundMessageView.swift in Sources */,
 				70FBEF532C54E1E1004FDA53 /* HomeView.swift in Sources */,
 				703A4ED92C55B1BB00ECA09B /* Service.swift in Sources */,
+				70C682422C5CB94500B56003 /* ServicesDetailView.swift in Sources */,
 				70C726432C5AABE0009FB7B0 /* OnbordingValidations.swift in Sources */,
 				70D55B502C556A360025D84D /* MyProfileView.swift in Sources */,
 				702B37572C547CA2003BF42D /* TextFieldSecurityView.swift in Sources */,

@@ -18,7 +18,7 @@ struct TestData {
     let doctor3: Doctor
     
     var doctors: [Doctor] = []
-        
+    let services : [Service]
         
     
     
@@ -185,6 +185,20 @@ struct TestData {
         
         
         self.doctors = [doctor1, doctor2, doctor3]
+        
+        self.services =  [
+            
+            .init(title: .notifications ),
+            .init(title: .payment),
+            .init(title: .auth),
+            .init(title: .termsAndconditions),
+            .init(title:  .privacy),
+            .init(title:  .contact),
+            .init(title: .logout)
+
+
+        ]
+
     }
     
     

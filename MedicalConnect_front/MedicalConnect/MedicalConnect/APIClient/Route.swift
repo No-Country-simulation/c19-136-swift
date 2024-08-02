@@ -12,9 +12,9 @@ enum Route {
     
     
     case signup
-    case login
+    case login(TabViewRoute)
     case signupForm(UserRoute)
-    case home(Doctor)
+    //case home(Doctor)
     
     
     enum UserRoute: Hashable {
@@ -34,8 +34,8 @@ enum Route {
     
     enum TabViewRoute: Hashable{
         case home(HomeRoute)
-        case configure(Service)
-        case profile(Patient)
+        case configure(ConfigureRoute)
+        case profile(ProfileRoute)
     }
     
     
@@ -46,15 +46,15 @@ enum Route {
     
     
     enum ConfigureRoute: Hashable {
-        case home
         case list
-        case details(item: Service)
+     //   case details(item: Service)
+        //case details()
     }
     
     
     enum ProfileRoute: Hashable {
         case list
-        case details(item: MyMenu)
+    //    case details(item: MyMenu)
     }
     
 }
@@ -69,8 +69,8 @@ extension Route: Hashable {
     
     static func == (lhs: Route, rhs: Route) -> Bool {
         switch (lhs, rhs) {
-            case( .login, .login):
-                return true
+            case( .login(let lhsTabViewRoute), .login(let rhsTabViewRoute)):
+                return  lhsTabViewRoute == rhsTabViewRoute
                 
             case (.signup,  .signup):
                 return true
@@ -78,8 +78,9 @@ extension Route: Hashable {
             case (.signupForm(let lhsUser), .signupForm(let rhsUser)):
                 return lhsUser == rhsUser
                 
-            case (.home(let lhsDoctor), .home(let rhsDoctor)):
-                return lhsDoctor == rhsDoctor
+                
+//            case (.home(let lhsDoctor), .home(let rhsDoctor)):
+//                return lhsDoctor == rhsDoctor
             default:
                 return false
   
@@ -94,9 +95,44 @@ extension Route: View {
     
     var body: some View{
         switch self {
-            case .login:
+            case .login(let tabViewRoute):
+                
+                switch tabViewRoute {
+                    case .home(let option):
+                        switch option {
+                            case .list:
+                                MainTabView()
+                            case .details(doctor: let doctor):
+                                ProfileDocView(doctor: doctor)
+                        }
+                    case .configure(let option):
+                        switch option{
+                            case .list:
+                                    MainTabView()
+//                                MainTabView(tabViewRoute: .configure(.list))
+                                
+                         //   case .details(item: let service):
+                                
+                        }
+                            
+                        
+                      
+        
+                    case .profile(let option):
+                        switch option{
+                            case .list:
+                                MainTabView()
+                               // MainTabView(tabViewRoute: .profile(.list))
+                            
+                        }
+                
+                }
+                
+                //MainTabView(tabViewRoute: tabViewRoute)
                 //HomeView()
-                MainTabView()
+                
+
+                
                 
                 
             case .signup:
@@ -114,8 +150,8 @@ extension Route: View {
                         PatientSignupFormView(user: user)
                 }
 
-            case .home( let item ):
-                ProfileDocView(doctor: item)
+//            case .home( let item ):
+//                ProfileDocView(doctor: item)
 
         }
     }
