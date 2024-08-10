@@ -23,12 +23,12 @@ struct ResultsView: View {
                         NavigationLink(value: doctor) {
                             DoctorRowView(doctor: doctor)
                         }
-                        .navigationDestination(for: Doctor.self) { doctor in
-                            
-                            ProfileDocView(doctor: doctor)
-
-        
-                        }
+//                        .navigationDestination(for: Doctor.self) { doctor in
+//                            
+//                            ProfileDocView(doctor: doctor)
+//
+//        
+//                        }
                         .tint(.black)
                   
                      

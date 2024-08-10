@@ -9,8 +9,11 @@ import Foundation
 import SwiftUI
 
 final class NavigationRouter: ObservableObject {
-    @Published var routes = [Route]()
+    @Published var routes: [Route] = []
     
+  
+    @Published var settingStack: [Route.SettingRoute] = []
+    @Published var profileStack : [Route.ProfileRoute] = []
     
     
     func push(to screen: Route) {

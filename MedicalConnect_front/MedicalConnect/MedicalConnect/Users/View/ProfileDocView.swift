@@ -7,24 +7,20 @@
 
 import SwiftUI
 
+
 struct ProfileDocView: View {
-    
     let doctor: Doctor
     private let validations: DoctorDataValidations = DoctorDataValidations()
-    @EnvironmentObject private var routeManager : NavigationRouter
-    @State private var nextView: Bool = false
+  
+//    @Binding var path: NavigationPath
+    @EnvironmentObject var router: TabRouter
 
-    @State var scheduleAccess: Bool = false
-
-    
     let test = TestData()
+    
     var body: some View {
-       
-            
-            VStack {
-                
+        GeometryReader { geometry in
+            VStack(spacing: geometry.size.height * 0.02 ) {
                 ScrollView {
-                    
                     CardAboutDoctorView(
                         name: doctor.user.name,
                         evaluation: validations.getAverageOfEvaluations(doctor: doctor),
@@ -34,13 +30,14 @@ struct ProfileDocView: View {
                         numberOfConsults: validations.getNumberOfConsults(doctor: doctor),
                         jobDescription: doctor.jobDescription
                     )
-                    
+                    .padding(.vertical, geometry.size.height * 0.02)
                     
                     Button(action: {
                         
-                        nextView = true
-                        //routeManager.push(to: <#T##Route#>)
+//                        path.append(HomeRoute.schedule(doctor: doctor))
+                        router.path.append(HomeRoute.schedule(doctor: doctor))
                         
+
                         print("Agendar consulta")
                     }, label: {
                         Text("Agendar consulta")
@@ -49,23 +46,21 @@ struct ProfileDocView: View {
                             .kerning(1.2)
                     })
                     .buttonStyle(MainButtonStyle(isEnabled: true))
-                    .padding(.vertical, 12)
-                    .navigationDestination(isPresented: $nextView) {
-                        SchedulePayAppoinmentView(doctor: doctor, patient: test.patient1)
-                    }
+
+                    .padding(.vertical, geometry.size.height * 0.02)
+ 
                     
-                    VStack{
+                    VStack {
                         Text("Reseñas")
                             .padding(5)
                             .font(Font.custom("Montserrat-semiBold", size: 16))
                             .frame(maxWidth: .infinity)
                             .background(.backgroundRows200, in: RoundedRectangle(cornerRadius: 8))
-                            .padding(.horizontal,12)
+                            .padding(.horizontal, 12)
                         
                         ScrollView(.horizontal) {
-                            HStack{
+                            HStack {
                                 ForEach(validations.getReviews(doctor: doctor), id: \.id) { review in
-                                    
                                     DoctorReviewCardView(
                                         name: review.name,
                                         evaluation: review.evaluation,
@@ -75,24 +70,27 @@ struct ProfileDocView: View {
                             }
                         }
                         .padding(.horizontal, 12)
-                        
                     }
                 }
-                
-
                 Spacer()
-                
-
             }
-            .environmentObject(routeManager)
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            
+        }
+        .environmentObject(router)
+      
     }
 }
+
+
 
 #Preview {
    
     let showData = DoctorDataValidations()
     let test = TestData()
-    
+    @State var path: NavigationPath = .init()
     return ProfileDocView(doctor: test.doctor1)
-        .environmentObject(NavigationRouter())
+        .environmentObject(TabRouter())
+     
 }
+

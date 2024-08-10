@@ -79,6 +79,8 @@
 		70D9B5B02C56D2ED00E507DD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9B5AF2C56D2ED00E507DD /* Review.swift */; };
 		70D9B5B22C56E7C000E507DD /* DoctorEvaluationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9B5B12C56E7C000E507DD /* DoctorEvaluationData.swift */; };
 		70D9B5B52C56F18D00E507DD /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9B5B42C56F18D00E507DD /* TestData.swift */; };
+		70F5D0B42C64305C0073BCD6 /* AppNavRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5D0B32C64305B0073BCD6 /* AppNavRouter.swift */; };
+		70F5D0B62C6433180073BCD6 /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5D0B52C6433180073BCD6 /* TabRouter.swift */; };
 		70FBEF432C54C2D2004FDA53 /* UserSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF422C54C2D1004FDA53 /* UserSignupFormView.swift */; };
 		70FBEF472C54C72B004FDA53 /* DoctorSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */; };
 		70FBEF492C54CA14004FDA53 /* PatientSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */; };
@@ -166,6 +168,8 @@
 		70D9B5AF2C56D2ED00E507DD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		70D9B5B12C56E7C000E507DD /* DoctorEvaluationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorEvaluationData.swift; sourceTree = "<group>"; };
 		70D9B5B42C56F18D00E507DD /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = MedicalConnect/Users/Doctor/Models/TestData.swift; sourceTree = SOURCE_ROOT; };
+		70F5D0B32C64305B0073BCD6 /* AppNavRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppNavRouter.swift; path = MedicalConnect/Consult/Components/AppNavRouter.swift; sourceTree = SOURCE_ROOT; };
+		70F5D0B52C6433180073BCD6 /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabRouter.swift; path = MedicalConnect/Consult/Components/TabRouter.swift; sourceTree = SOURCE_ROOT; };
 		70FBEF422C54C2D1004FDA53 /* UserSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSignupFormView.swift; path = MedicalConnect/Users/UserSignupFormView.swift; sourceTree = SOURCE_ROOT; };
 		70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSignupFormView.swift; sourceTree = "<group>"; };
 		70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignupFormView.swift; sourceTree = "<group>"; };
@@ -537,6 +541,8 @@
 			children = (
 				70C7263D2C5A9F54009FB7B0 /* NavigationRouter.swift */,
 				70C7263F2C5AA002009FB7B0 /* Route.swift */,
+				70F5D0B32C64305B0073BCD6 /* AppNavRouter.swift */,
+				70F5D0B52C6433180073BCD6 /* TabRouter.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				709707182C5D59B000CE5376 /* AppointmenManager.swift in Sources */,
 				70D9B5B52C56F18D00E507DD /* TestData.swift in Sources */,
 				703AE8EA2C52A16F007FEC4C /* StartingView.swift in Sources */,
+				70F5D0B42C64305C0073BCD6 /* AppNavRouter.swift in Sources */,
 				702B37532C545B34003BF42D /* OnboardingView.swift in Sources */,
 				70205E202C58C7C400B7381B /* MyDataView.swift in Sources */,
 				7087A1F52C59D5B400A3CEFB /* Endpoint.swift in Sources */,
@@ -744,6 +751,7 @@
 				7005D7932C5B6FE000F6C234 /* PatientManager.swift in Sources */,
 				70FE4F212C572B0800E10A7F /* DoctorDataValidations.swift in Sources */,
 				703A4ED72C55AE5200ECA09B /* ConfigServices.swift in Sources */,
+				70F5D0B62C6433180073BCD6 /* TabRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

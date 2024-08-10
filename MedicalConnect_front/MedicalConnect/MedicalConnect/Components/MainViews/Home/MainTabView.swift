@@ -9,29 +9,27 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    @State var selectedTabView: Route.TabViewRoute = .home(.list)
+    
+    @State var selectedTabView: TabRoute = .home
+    
+    @EnvironmentObject private var router: TabRouter
     
     var body: some View {
-        
-        
-        
         
         TabView(selection: $selectedTabView) {
             MyProfileView()
                 .tabItem {  Image("heart.profile-3")
                         .renderingMode(.template)
                     Text("Mi perfil") }
-                .tag(Route.TabViewRoute.profile(.list))
+                .tag(TabRoute.profile)
             
             HomeView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
-                .tag(Route.TabViewRoute.home(.list))
+                .tag(TabRoute.home)
             
             ConfigView()
                 .tabItem { Label("Configuración", systemImage: "gearshape.2.fill") }
-                .tag(Route.TabViewRoute.configure(.list))
-            
-            
+                .tag(TabRoute.settings)
         }
         .onAppear() {
             UITabBar.appearance().backgroundColor = UIColor(named: "mainColor")
@@ -40,12 +38,13 @@ struct MainTabView: View {
         }
         .navigationBarBackButtonHidden()
         .tint(.babyBlue200)
-        
-        
-        
+        .onChange(of: selectedTabView) { oldValue, newValue in
+            print("From \(oldValue) to \(newValue) ")
+        }
     }
 }
 
 #Preview {
     MainTabView()
+        .environmentObject(TabRouter())
 }

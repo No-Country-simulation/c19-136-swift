@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SchedulePayAppoinmentView: View {
     let doctor: Doctor
-    let patient: Patient
+//    let patient: Patient
     let consultPrice: Float = 15
     let servicePrice: Float = 2
     let finalPrice: Float = 17
@@ -19,7 +19,8 @@ struct SchedulePayAppoinmentView: View {
     @State var confirmAppointment: Bool = false
     let test = TestData()
     
-    
+    @EnvironmentObject private var route : TabRouter
+   // @ObservedObject private var route = TabRouter()
     var body: some View {
         
         
@@ -35,7 +36,7 @@ struct SchedulePayAppoinmentView: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 .padding(EdgeInsets(top: 25, leading: 16, bottom: 25, trailing: 16))
                
-                    
+                
                 
                 
                 VStack(alignment: .leading){
@@ -72,7 +73,12 @@ struct SchedulePayAppoinmentView: View {
                 .padding(18)
                 
                 Button(action: {
-                    confirmAppointment = true
+                    route.path.append(HomeRoute.confirmPayment)
+//                    confirmAppointment = true
+                  //  route.path.append(HomeRoute.confirmPayment)
+//                    route.addToHomeRoute(to: .confirmPayment)
+//                    route.addToHomeRoute(to: .schedule(doctor: doctor))
+                    
                     print("Realizar pago")
                 }, label: {
                     Text("Realizar pago")
@@ -82,11 +88,9 @@ struct SchedulePayAppoinmentView: View {
                 })
                 .buttonStyle(MainButtonStyle(isEnabled: isPaymentMethodCheck))
                 .padding(.vertical, 12)
-                .navigationDestination(isPresented: $confirmAppointment) {
-                    BacgroundMessageView()
-                }
             }
         }
+        .environmentObject(route)
        
     }
     
@@ -112,5 +116,6 @@ struct SchedulePayAppoinmentView: View {
 #Preview {
     let test = TestData()
     
-    return SchedulePayAppoinmentView(doctor: test.doctor1, patient: test.patient1)
+    return SchedulePayAppoinmentView(doctor: test.doctor1)
+       .environmentObject(TabRouter())
 }
