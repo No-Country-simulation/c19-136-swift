@@ -73,11 +73,10 @@ struct SchedulePayAppoinmentView: View {
                 .padding(18)
                 
                 Button(action: {
-                    route.path.append(HomeRoute.confirmPayment)
+                    route.addHomeRoute(to: .confirmPayment)
+//                    route.path.append(HomeRoute.confirmPayment)
 //                    confirmAppointment = true
-                  //  route.path.append(HomeRoute.confirmPayment)
-//                    route.addToHomeRoute(to: .confirmPayment)
-//                    route.addToHomeRoute(to: .schedule(doctor: doctor))
+                  
                     
                     print("Realizar pago")
                 }, label: {

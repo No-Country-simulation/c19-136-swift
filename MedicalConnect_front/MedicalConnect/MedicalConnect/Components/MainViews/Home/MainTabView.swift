@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     
     
-    @State var selectedTabView: TabRoute = .home
+    @State var selectedTabView: TabMenu = .home
     
     @EnvironmentObject private var router: TabRouter
     
@@ -18,18 +18,19 @@ struct MainTabView: View {
         
         TabView(selection: $selectedTabView) {
             MyProfileView()
-                .tabItem {  Image("heart.profile-3")
+                .tabItem {  
+                    Image("heart.profile-3")
                         .renderingMode(.template)
                     Text("Mi perfil") }
-                .tag(TabRoute.profile)
+                .tag(TabMenu.profile)
             
             HomeView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
-                .tag(TabRoute.home)
+                .tag(TabMenu.home)
             
             ConfigView()
                 .tabItem { Label("Configuración", systemImage: "gearshape.2.fill") }
-                .tag(TabRoute.settings)
+                .tag(TabMenu.settings)
         }
         .onAppear() {
             UITabBar.appearance().backgroundColor = UIColor(named: "mainColor")
@@ -37,7 +38,7 @@ struct MainTabView: View {
             UITabBar.appearance().barTintColor = UIColor.gray
         }
         .navigationBarBackButtonHidden()
-        .tint(.babyBlue200)
+        .tint(.white)
         .onChange(of: selectedTabView) { oldValue, newValue in
             print("From \(oldValue) to \(newValue) ")
         }
@@ -48,3 +49,20 @@ struct MainTabView: View {
     MainTabView()
         .environmentObject(TabRouter())
 }
+
+
+//extension MainTabView {
+//    private func tabSelection() -> Binding<TabMenu> {
+//        Binding {
+//            self.selectedTabView
+//        } set: { tappedTab in
+//           
+//            if tappedTab == self.selectedTabView {
+//                
+//            }
+//            
+//            self.selectedTabView = tappedTab
+//        }
+//      
+//    }
+//}

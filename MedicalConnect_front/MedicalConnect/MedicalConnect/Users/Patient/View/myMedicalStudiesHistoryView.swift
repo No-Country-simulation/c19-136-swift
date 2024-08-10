@@ -9,7 +9,14 @@ import SwiftUI
 
 struct myMedicalStudiesHistoryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            Text("Mis estudios médicos")
+        }
+        .toolbarBackground(.main, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .navigationTitle("Mis estudios")
+      
     }
 }
 

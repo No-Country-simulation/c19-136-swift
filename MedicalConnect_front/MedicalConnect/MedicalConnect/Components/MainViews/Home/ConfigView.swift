@@ -17,8 +17,6 @@ struct ConfigView: View {
         .init(title:  .privacy),
         .init(title:  .contact),
             .init(title: .logout)
-        
-        
     ]
     
     @EnvironmentObject private var router: TabRouter
@@ -26,7 +24,7 @@ struct ConfigView: View {
     var body: some View {
 
         
-        NavigationStack(path: $router.path) {
+        NavigationStack(path: $router.settingStack) {
             
 //            Text("Configuración")
 //                .font(Font.custom("Montserrat-Bold", size: 20))

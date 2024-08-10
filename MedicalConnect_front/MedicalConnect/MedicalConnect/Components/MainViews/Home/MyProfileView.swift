@@ -22,7 +22,7 @@ struct MyProfileView: View {
     var body: some View {
        
 
-        NavigationStack(path: $router.path) {
+        NavigationStack(path: $router.profileStack) {
                 
 //                Text("Mi Perfil")
 //                    .font(Font.custom("Montserrat-Bold", size: 20))
@@ -37,20 +37,12 @@ struct MyProfileView: View {
                         Text(option.title.rawValue)
                     }
                     .frame(height: 40)
-
-//                    NavigationLink(value: Route.login(.profile(.details(item: option)))) {
-//                        Text(option.title.rawValue)
-//                    }
-//                    .frame(height: 40)
-//
-//                    
+            
                 }
                 .navigationTitle("Mi Perfil")
                 .font(Font.custom("Montserrat-Regular", size: 16))
                 .toolbarBackground(.main, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-
-            //    .navigationDestination(for: Route.self, destination: { $0 })
                 .navigationDestination(for: ProfileRoute.self, destination: { screen in
                     switch screen {
                         case .details(let item):

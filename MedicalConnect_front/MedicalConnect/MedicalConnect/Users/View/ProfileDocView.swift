@@ -11,8 +11,7 @@ import SwiftUI
 struct ProfileDocView: View {
     let doctor: Doctor
     private let validations: DoctorDataValidations = DoctorDataValidations()
-  
-//    @Binding var path: NavigationPath
+
     @EnvironmentObject var router: TabRouter
 
     let test = TestData()
@@ -34,8 +33,8 @@ struct ProfileDocView: View {
                     
                     Button(action: {
                         
-//                        path.append(HomeRoute.schedule(doctor: doctor))
-                        router.path.append(HomeRoute.schedule(doctor: doctor))
+                        router.addHomeRoute(to: .schedule(doctor: doctor))
+//                        router.path.append(HomeRoute.schedule(doctor: doctor))
                         
 
                         print("Agendar consulta")
@@ -46,7 +45,6 @@ struct ProfileDocView: View {
                             .kerning(1.2)
                     })
                     .buttonStyle(MainButtonStyle(isEnabled: true))
-
                     .padding(.vertical, geometry.size.height * 0.02)
  
                     
@@ -75,10 +73,8 @@ struct ProfileDocView: View {
                 Spacer()
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
-            
         }
         .environmentObject(router)
-      
     }
 }
 
@@ -86,9 +82,7 @@ struct ProfileDocView: View {
 
 #Preview {
    
-    let showData = DoctorDataValidations()
     let test = TestData()
-    @State var path: NavigationPath = .init()
     return ProfileDocView(doctor: test.doctor1)
         .environmentObject(TabRouter())
      

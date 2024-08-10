@@ -10,12 +10,12 @@ import SwiftUI
 
 
 //Enum for internal routes
-enum TabRoute: Hashable, Identifiable, CaseIterable {
+enum TabMenu: Hashable, Identifiable, CaseIterable {
     case home
     case settings
     case profile
     
-    var id: TabRoute { self }
+    var id: TabMenu { self }
     
 }
 

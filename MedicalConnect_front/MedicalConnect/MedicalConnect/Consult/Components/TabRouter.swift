@@ -9,40 +9,81 @@ import Foundation
 import SwiftUI
 
 class TabRouter:  ObservableObject {
-//    @Published var homeNavigation: [HomeRoute] = []
-//    @Published var settingNavigation: [SettingRoute] = []
-//    @Published var profileNavigation: [ProfileRoute] = []
-    @Published  var path = NavigationPath()
-//    var appRouter: AppNavRouter
-//    
-//    init(appRouter: AppNavRouter = AppNavRouter(with: NavigationPath())) {
-//        self.appRouter = appRouter
-//    }
+//    @Published  var path = NavigationPath()
+    @Published  var homeStack = NavigationPath()
+    @Published  var profileStack = NavigationPath()
+    @Published  var settingStack = NavigationPath()
     
+    
+    // MARK: - Home Route
     
     func addHomeRoute(to target: HomeRoute){
-        path.append(target)
+        homeStack.append(target)
     }
-
     
-//    func addToProfileRoute( to target: ProfileRoute) {
-//        appRouter.navigate(to: target)
+    func navigateBackHomeRoute(){
+        homeStack.removeLast()
+    }
+    
+    func popToRootHomeRoute(){
+        homeStack.removeLast(homeStack.count)
+    }
+    
+    // MARK: - Setting Route
+    func addSettingRoute(to target: SettingRoute){
+        settingStack.append(target)
+    }
+    
+    func navigateBackSettingRoute(){
+        settingStack.removeLast()
+    }
+    
+    func popToRootSettingRoute(){
+        settingStack.removeLast(settingStack.count)
+    }
+    
+    
+    //MARK: - Profile Route
+    
+    func addProfileRoute(to target: ProfileRoute){
+        profileStack.append(target)
+    }
+    
+    func navigateBackProfileRoute(){
+        profileStack.removeLast()
+    }
+    
+    func popToRootProfileRoute(){
+        profileStack.removeLast(profileStack.count)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    func navigateBack(){
+//        path.removeLast()
 //    }
 //    
-////    func addToHomeRoute( to target: HomeRoute) {
-////
-////       // appRouter.navigate(to: target)
-////    }
-//    
-//    func addToSetting(to target: SettingRoute){
-//        appRouter.navigate(to: target)
+//    func popToRoot(){
+//        path.removeLast(path.count)
 //    }
-//    
-//    func navigate( to target: TabRoute){
-//        appRouter.navigate(to: target)
-//    }
-//    
-//    func pop(){
-//        appRouter.pop()
-//    }
+    
+ 
+
+}
+
+extension Binding {
+    func onUpdate(_ closure: @escaping() -> Void) -> Binding {
+        Binding(get: {
+                    wrappedValue
+                }, set: { newValue in
+                    wrappedValue = newValue
+                    closure()
+                })
+    }
 }

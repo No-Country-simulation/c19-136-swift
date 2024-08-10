@@ -43,11 +43,10 @@ struct BacgroundMessageView: View {
             
             Button(action: {
                 
+                routeManager.popToRootHomeRoute()
+//                routeManager.popToRoot()
                 
-//               //routeManager.goBack()
-//              //  routeManager.push(to: .login(.home(.list)))
-//                routeManager.routes = []
-                // confirmAppointment = true
+                
                 print("Realizar pago")
             }, label: {
                 Text("Volver a Home")
@@ -58,12 +57,12 @@ struct BacgroundMessageView: View {
             .buttonStyle(MainButtonStyle(isEnabled: true))
             .padding(.vertical, 12)
         }
+        .toolbarBackground(.main, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .navigationTitle("Cita confirmada")
         .navigationBarBackButtonHidden()
         .padding(.horizontal, 16)
         .environmentObject(routeManager)
-        
-        
-        
     }
 }
 

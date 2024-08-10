@@ -13,19 +13,13 @@ struct HomeView: View {
     let example = TestData()
     let showData = DoctorDataValidations()
     @State private var searchDoctorBySpeciality: Bool = false
-    
-    
-    
-    //@ObservedObject var navController: TabRouter
-//   @Binding var path: [HomeRoute]
-   
-  //  @Binding var nav: NavigationPath
+
     
     @EnvironmentObject private var router: TabRouter
     
     
     var body: some View {
-        NavigationStack(path: $router.path) {
+        NavigationStack(path: $router.homeStack) {
             GeometryReader { geometry in
                 VStack {
                     UpperFrame(label: "Encuentra el profesional que necesitas")
@@ -65,7 +59,6 @@ struct HomeView: View {
                             NavigationLink(value: HomeRoute.details(doctor: doctor)) {
                                 DoctorRowView(doctor: doctor)
                             }
-
                         }
                     }
                     .tint(.black)
@@ -73,8 +66,6 @@ struct HomeView: View {
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height)
             }
-           
-        
             .navigationDestination(for: HomeRoute.self, destination: { screen in
                 switch screen {
                     case .details(doctor: let doctor):
