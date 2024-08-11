@@ -43,21 +43,7 @@ struct MyProfileView: View {
                 .font(Font.custom("Montserrat-Regular", size: 16))
                 .toolbarBackground(.main, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-                .navigationDestination(for: ProfileRoute.self, destination: { screen in
-                    switch screen {
-                        case .details(let item):
-                            switch item.title {
-                                case .myData:
-                                    MyDataView()
-                                case .myAppointments:
-                                    MyAppointmentsHistoryView()
-                                case .myStudies:
-                                    myMedicalStudiesHistoryView()
-                                case .treatments:
-                                    MyMedicalRecordsHistory()
-                            }
-                    }
-                })
+                .navigationDestination(for: ProfileRoute.self, destination: { $0})
                 .listStyle(InsetListStyle())
                 
             }

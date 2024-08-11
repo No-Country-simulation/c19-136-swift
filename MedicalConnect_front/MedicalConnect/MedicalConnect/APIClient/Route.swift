@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 
+//MARK: - Menu Tab
+
 //Enum for internal routes
 enum TabMenu: Hashable, Identifiable, CaseIterable {
     case home
@@ -19,42 +21,66 @@ enum TabMenu: Hashable, Identifiable, CaseIterable {
     
 }
 
-//extension TabRoute: View {
-//    var body: some View {
-//        switch self {
-//            case .home:
-//                HomeView(path: <#T##Binding<[HomeRoute]>#>)
-//        }
-//    }
-//}
 
-//extension TabRoute {
-//    @ViewBuilder
-//    var label: some View {
-//        switch self {
-//            case .home:
-//                Label("Home", systemImage: "house.fill")
-//            case .settings:
-//                Label("Configuración", systemImage: "gearshape.2.fill")
-//            case .profile:
-//                Label("Mi perfil", image: "heart.profile-3")
-//                   
-//        }
-//    }
-//    
-//    @ViewBuilder
-//    var destionation: some View {
-//        switch self {
-//            case .home:
-//              HomeView()
-//            case .settings:
-//                ConfigView()
-//            case .profile:
-//                MyProfileView()
-//        }
-//    }
-//}
+enum HomeRoute: Hashable {
+    case details(doctor: Doctor)
+    case schedule(doctor: Doctor)
+    case confirmPayment
+}
 
+extension HomeRoute: View {
+    var body: some View {
+        switch self {
+            case .details(let doctor):
+                ProfileDocView(doctor: doctor)
+            case .schedule(let doctor):
+                SchedulePayAppoinmentView(doctor: doctor)
+            case .confirmPayment:
+                BacgroundMessageView()
+        }
+    }
+}
+
+
+enum SettingRoute: Hashable {
+    case details(item: Service)
+    
+}
+
+extension SettingRoute: View {
+    var body: some View {
+        switch self {
+            case .details(item: let service):
+                ServiceDetailView(service: service)
+        }
+    }
+}
+
+
+enum ProfileRoute: Hashable {
+    case details(item: MyMenu)
+}
+
+extension ProfileRoute : View {
+    var body: some View {
+        switch self {
+            case .details(let item):
+                switch item.title {
+                    case .myData:
+                        MyDataView()
+                    case .myAppointments:
+                        MyAppointmentsHistoryView()
+                    case .myStudies:
+                        myMedicalStudiesHistoryView()
+                    case .treatments:
+                        MyMedicalRecordsHistory()
+                }
+        }
+    }
+}
+
+
+//MARK: - External Actions
 
 //Enum for external routes
 enum ExternalRoutes: Hashable {
@@ -65,37 +91,6 @@ enum ExternalRoutes: Hashable {
 }
 
 
-enum HomeRoute: Hashable {
-    case details(doctor: Doctor)
-    case schedule(doctor: Doctor)
-    case confirmPayment
-}
-//
-//extension HomeRoute : View {
-//    var body: some View {
-//        switch self {
-//            case .details(doctor: let doctor):
-//                ProfileDocView(doctor: doctor, path: <#Binding<NavigationPath>#> )
-//            case .schedule(doctor: let doctor):
-//                SchedulePayAppoinmentView(doctor: doctor)
-//            case .confirmPayment:
-//                BacgroundMessageView()
-//            
-//        }
-//    }
-//}
-
-
-enum SettingRoute: Hashable {
-    case details(item: Service)
-    
-}
-
-
-enum ProfileRoute: Hashable {
-    case details(item: MyMenu)
-    
-}
 
 
 enum Route {
@@ -166,8 +161,6 @@ extension Route: Hashable {
 }
 
 
-
-
 extension Route: View {
     
     var body: some View{
@@ -223,3 +216,6 @@ extension Route: View {
     }
     
 }
+
+
+

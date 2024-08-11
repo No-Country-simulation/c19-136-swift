@@ -42,7 +42,6 @@ struct ConfigView: View {
 
         }
         .navigationTitle("Configuración")
-        
         .font(Font.custom("Montserrat-Regular", size: 16))
         .toolbarBackground(.main, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)

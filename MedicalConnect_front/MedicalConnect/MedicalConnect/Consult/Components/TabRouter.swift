@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class TabRouter:  ObservableObject {
-//    @Published  var path = NavigationPath()
+
     @Published  var homeStack = NavigationPath()
     @Published  var profileStack = NavigationPath()
     @Published  var settingStack = NavigationPath()
@@ -30,6 +30,7 @@ class TabRouter:  ObservableObject {
     }
     
     // MARK: - Setting Route
+    
     func addSettingRoute(to target: SettingRoute){
         settingStack.append(target)
     }
@@ -56,25 +57,6 @@ class TabRouter:  ObservableObject {
     func popToRootProfileRoute(){
         profileStack.removeLast(profileStack.count)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    func navigateBack(){
-//        path.removeLast()
-//    }
-//    
-//    func popToRoot(){
-//        path.removeLast(path.count)
-//    }
-    
- 
-
 }
 
 extension Binding {

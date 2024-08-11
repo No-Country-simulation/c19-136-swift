@@ -66,17 +66,7 @@ struct HomeView: View {
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height)
             }
-            .navigationDestination(for: HomeRoute.self, destination: { screen in
-                switch screen {
-                    case .details(doctor: let doctor):
-                        ProfileDocView(doctor: doctor)
-                    case .schedule(doctor: let doctor):
-                        SchedulePayAppoinmentView(doctor: doctor)
-                    case .confirmPayment:
-                        BacgroundMessageView()
-                    
-                }
-            })
+            .navigationDestination(for: HomeRoute.self, destination: { $0 })
         }
         .environmentObject(router)
     }

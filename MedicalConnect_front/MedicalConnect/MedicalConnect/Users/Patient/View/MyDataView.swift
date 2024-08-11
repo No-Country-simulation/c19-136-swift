@@ -31,10 +31,7 @@ struct MyDataView: View {
             })
             .buttonStyle(MainButtonStyle(isEnabled: true))
             .padding(.vertical, 32)
-            
-
         }
-
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
         .padding(.horizontal, 16)
         .toolbarBackground(.main, for: .navigationBar)

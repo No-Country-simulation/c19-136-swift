@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct SchedulePayAppoinmentView: View {
+    
     let doctor: Doctor
-//    let patient: Patient
     let consultPrice: Float = 15
     let servicePrice: Float = 2
     let finalPrice: Float = 17
+    let test = TestData()
+    
     @State var selectedPaymentMethod: PaymentMethod?
     @State var isPaymentMethodCheck : Bool = false 
     @State var selectedAppointmenDate: Date = Date()
     @State var confirmAppointment: Bool = false
-    let test = TestData()
-    
     @EnvironmentObject private var route : TabRouter
-   // @ObservedObject private var route = TabRouter()
+
     var body: some View {
         
         
@@ -28,17 +28,16 @@ struct SchedulePayAppoinmentView: View {
             UpperFrame(label: "Programa tu cita")
             ScrollView {
             
-
+            
                 VStack{
                     DatePicker("Fecha y hora de tu cita", selection: $selectedAppointmenDate, in: Date()..., displayedComponents: [.date, .hourAndMinute] )
                         .font(Font.custom("Montserrat-semiBold", size: 14))
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 .padding(EdgeInsets(top: 25, leading: 16, bottom: 25, trailing: 16))
-               
-                
-                
-                
+            
+            
+            
                 VStack(alignment: .leading){
                     
                     Text("Medios de pago")
@@ -50,13 +49,12 @@ struct SchedulePayAppoinmentView: View {
                     if test.patient1.paymentMethods != nil{
                         ForEach(test.patient1.paymentMethods!, id: \.self){ method in
                             PaymentMethodCardView(paymentName: method.name, checked: selectingPaymentMethod(method: method))
-                            
                         }
                     } else {
                         Text("Todavía no se ha registrado ninguna tarjeta")
-                                                   .font(Font.custom("Montserrat-Regular", size: 14))
-                                                   .foregroundColor(.gray)
-                                                   .padding(.bottom, 10)
+                            .font(Font.custom("Montserrat-Regular", size: 14))
+                            .foregroundColor(.gray)
+                            .padding(.bottom, 10)
                     }
                     
             
@@ -74,11 +72,9 @@ struct SchedulePayAppoinmentView: View {
                 
                 Button(action: {
                     route.addHomeRoute(to: .confirmPayment)
-//                    route.path.append(HomeRoute.confirmPayment)
-//                    confirmAppointment = true
-                  
-                    
+                
                     print("Realizar pago")
+                
                 }, label: {
                     Text("Realizar pago")
                         .padding(.horizontal, 24)
@@ -90,10 +86,8 @@ struct SchedulePayAppoinmentView: View {
             }
         }
         .environmentObject(route)
-       
     }
     
-
     
     
     func selectingPaymentMethod(method: PaymentMethod) -> Binding<Bool>{

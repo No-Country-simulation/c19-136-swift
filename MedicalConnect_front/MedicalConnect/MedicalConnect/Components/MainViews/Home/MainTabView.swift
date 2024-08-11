@@ -11,12 +11,11 @@ struct MainTabView: View {
     
     
     @State var selectedTabView: TabMenu = .home
-    
     @EnvironmentObject private var router: TabRouter
     
     var body: some View {
         
-        TabView(selection: $selectedTabView) {
+        TabView(selection: tabSelection()) {
             MyProfileView()
                 .tabItem {  
                     Image("heart.profile-3")
@@ -48,6 +47,40 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
         .environmentObject(TabRouter())
+}
+
+extension MainTabView {
+    private func tabSelection() -> Binding<TabMenu>{
+        Binding {
+            self.selectedTabView
+        } set: { tappedTab in
+            switch tappedTab {
+                case .home:
+                    if !router.homeStack.isEmpty {
+                        router.popToRootHomeRoute()
+                    }
+                   
+                case .profile:
+                    if !router.profileStack.isEmpty {
+                        router.popToRootProfileRoute()
+                    }
+                   
+                case .settings:
+                    if !router.settingStack.isEmpty {
+                        router.popToRootSettingRoute()
+                    }
+                    
+                   
+            }
+            
+         
+            self.selectedTabView = tappedTab
+        }
+
+    }
+    
+    
+    
 }
 
 
