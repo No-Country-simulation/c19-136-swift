@@ -84,138 +84,106 @@ extension ProfileRoute : View {
 
 //Enum for external routes
 enum ExternalRoutes: Hashable {
-    case signup
+    case signup(SignupRoute)
     case login
-    case logout
-    case settings
+//    case logout
+//    case settings
+    
+    
+    enum SignupRoute: Hashable {
+        case generalForm
+        case signupDoctor(user: User)
+        case signPatient(user: User)
+    }
 }
 
 
-
-
-enum Route {
-    
-    
-    case signup
-    case login(TabViewRoute)
-    case signupForm(UserRoute)
-    //case home(Doctor)
-    
-    
-    enum UserRoute: Hashable {
-        case doctor(user: User)
-        case patient(user: User)
-    }
-    
-    
-    enum TabViewRoute: Hashable{
-       
-        case configure(SettingRoute)
-        case profile(ProfileRoute)
-    }
-    
-
-    
-    
-    enum SettingRoute: Hashable {
-        case list
-        case details(item: Service)
-        //case details()
-    }
-    
-    
-    enum ProfileRoute: Hashable {
-        case list
-        case details(item: MyMenu)
-        
-    }
-    
-}
-
-extension Route: Hashable {
-
-    
-    func hash(into hasher: inout Hasher) {
-       hasher.combine(self.hashValue)
-    }
-    
-    
-    static func == (lhs: Route, rhs: Route) -> Bool {
-        switch (lhs, rhs) {
-            case( .login(let lhsTabViewRoute), .login(let rhsTabViewRoute)):
-                return  lhsTabViewRoute == rhsTabViewRoute
-                
-            case (.signup,  .signup):
-                return true
-                
-            case (.signupForm(let lhsUser), .signupForm(let rhsUser)):
-                return lhsUser == rhsUser
-                
-            default:
-                return false
-  
-        }
-    }
-    
-
-}
-
-
-extension Route: View {
-    
-    var body: some View{
+extension ExternalRoutes: View {
+    var body: some View {
         switch self {
-            case .login(let tabViewRoute):
-                
-                switch tabViewRoute {
-            
-                    case .configure(let option):
-                        switch option{
-                            case .list:
-                                   ScheduledAppointmentView()
-                            case .details(item: let service):
-                                ServiceDetailView(service: service)
-                                
-                        }
-
-                    case .profile(let option):
-                        switch option{
-                            case .list:
-                                ScheduledAppointmentView()
-                            
-                            case .details(let item):
-                                switch item.title {
-                                    case .myData:
-                                        MyDataView()
-                                    case .myAppointments:
-                                        MyAppointmentsHistoryView()
-                                    case .myStudies:
-                                        myMedicalStudiesHistoryView()
-                                    case .treatments:
-                                        MyMedicalRecordsHistory()
-                                }
-                        }
-                
-                }
-
-            case .signup:
-                    SignUpView()
-                
-            case .signupForm(let userRoute):
-                
-                switch userRoute{
-                    
-                        
-                    case .doctor(user: let user):
-                        DoctorSignupFormView(user: user)
-                    case .patient(user: let user):
-
+            case .login:
+                 EmptyView()
+            case .signup(let route):
+                switch route{
+                    case .generalForm:
+                        SignUpView()
+                    case .signPatient(user: let user):
                         PatientSignupFormView(user: user)
+                    case .signupDoctor(user: let user):
+                        DoctorSignupFormView(user: user)
                 }
         }
     }
-    
 }
 
+
+
+
+//enum Route {
+//    
+//    
+//    case signup
+//    case login
+//    case signupForm(UserRoute)
+//    
+//    
+//    enum UserRoute: Hashable {
+//        case doctor(user: User)
+//        case patient(user: User)
+//    }
+//
+//}
+//
+//extension Route: Hashable {
+//
+//    
+//    func hash(into hasher: inout Hasher) {
+//       hasher.combine(self.hashValue)
+//    }
+//    
+//    
+//    static func == (lhs: Route, rhs: Route) -> Bool {
+//        switch (lhs, rhs) {
+//
+//                
+//            case (.signup,  .signup):
+//                return true
+//                
+//            case (.signupForm(let lhsUser), .signupForm(let rhsUser)):
+//                return lhsUser == rhsUser
+//                
+//            default:
+//                return false
+//  
+//        }
+//    }
+//    
+//
+//}
+//
+//
+//extension Route: View {
+//    
+//    var body: some View{
+//        switch self {
+//            case .login:
+//                EmptyView()
+//            case .signup:
+//                    SignUpView()
+//            case .signupForm(let userRoute):
+//                switch userRoute{
+//                    
+//                        
+//                    case .doctor(user: let user):
+//                        DoctorSignupFormView(user: user)
+//                    case .patient(user: let user):
+//
+//                        PatientSignupFormView(user: user)
+//                }
+//        }
+//    }
+//    
+//}
+//
 
 

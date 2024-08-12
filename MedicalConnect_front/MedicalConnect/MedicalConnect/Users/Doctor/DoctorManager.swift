@@ -15,6 +15,7 @@ class DoctorManager: ObservableObject {
     
     @Published var addingServiceLabels: String = ""
     
+
     
     private var cancellables = Set<AnyCancellable>()
     init(
@@ -52,14 +53,15 @@ class DoctorManager: ObservableObject {
         
         
         
-        Publishers.CombineLatest(
+        Publishers.CombineLatest3(
             $doctor.map(\.user.phone),
-            $doctor.map(\.professionalLicense)
+            $doctor.map(\.professionalLicense),
+            $doctor.map(\.services)
 
-        ).map({ phone, professionalLicense in
+        ).map({ phone, professionalLicense, services in
             
            
-            return !phone.isEmpty && !professionalLicense.isEmpty
+            return !phone.isEmpty && !professionalLicense.isEmpty && !services.isEmpty
         })
         .assign(to: &$continueAccess)
         
@@ -68,5 +70,11 @@ class DoctorManager: ObservableObject {
     
     final func saveUserDataInDoctor(userData: User){
         doctor.user = userData
+    }
+    
+    
+    final func saveToServiceArray(service: String){
+        doctor.services.append(service)
+        //doctorServices.append(service)
     }
 }

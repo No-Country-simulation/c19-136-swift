@@ -9,13 +9,9 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-  @EnvironmentObject private var routeManager : NavigationRouter
-  //  @StateObject private var routeManager = NavigationRouter()
+    @EnvironmentObject private var onboardingRouter : OnboardingRouter
     @ObservedObject private var validations = OnbordingValidations()
     
-    
-    //let user: User
-    @State var loginAccess: Bool = false
     @State var email: String = ""
     @State var password: String = ""
 
@@ -123,7 +119,7 @@ struct OnboardingView: View {
     
     
     var body: some View {
-        NavigationStack(path: $routeManager.routes) {
+        NavigationStack(path: $onboardingRouter.routes) {
             ZStack {
                 GeometryReader { geometry in
                     ScrollView {
@@ -134,19 +130,20 @@ struct OnboardingView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 200, height: 200)
-                                .padding(.top, 20)
+                                .padding(.vertical, (geometry.size.height * 0.03))
                             
                             Group {
                                 TextFieldDataView(label: "Email", prompt: "ejemplo@email.com", keyboard: .emailAddress, data: $email)
-                                    .padding(.bottom, 32)
+                                    .padding(.bottom, geometry.size.height * 0.04)
                                 
                                 TextFieldSecurityView(password: $password, label: "Contraseña", prompt: "Tu contraseña aquí...", keyboard: .asciiCapable)
-                                    .padding(.bottom, 32)
+                                    .padding(.bottom, geometry.size.height * 0.04)
                             }
+                            .padding(.horizontal, 20)
                             
                             Group {
                                 Button(action: {
-                                    loginAccess = true
+                            
                                    
                                     print("Ingresando ...")
                                 }, label: {
@@ -160,8 +157,8 @@ struct OnboardingView: View {
                                 
                                 Button {
                                     
-                                    routeManager.routes.append(.signup)
-//                                    routeManager.reset()
+                                 
+                                    onboardingRouter.navigate(for: .signup(.generalForm))
                                     print("Registrarse")
                                 } label: {
                                     VStack {
@@ -173,8 +170,20 @@ struct OnboardingView: View {
                                 }
                                 .tint(.black)
                                 .padding(.bottom, 8)
+                                
+                                Text("ó")
+                                    .font(Font.custom("Montserrat-Regular", size: 12))
+                                    .padding(.bottom, 8)
+                                
+                                Button {
+                                    print("Registrarse con Apple")
+                                } label: {
+                                    Label("Iniciar sesión con Apple", systemImage: "apple.logo")
+                                        .font(Font.custom("Montserrat-SemiBold", size: 16))
+                                }
+                                .buttonStyle(SignInWithAppleButtonStyle(isEnabled: true))
                             }
-                            .navigationDestination(for: Route.self) { $0 }
+                            .navigationDestination(for: ExternalRoutes.self) { $0 }
                             
                             Spacer()
                         }
@@ -187,12 +196,13 @@ struct OnboardingView: View {
                 })
                 .ignoresSafeArea()
             }
-            .environmentObject(routeManager)
+            .environmentObject(onboardingRouter)
+            .navigationDestination(for: ExternalRoutes.self) { $0 }
         }
     }
 }
 
 #Preview {
     OnboardingView()
-        .environmentObject(NavigationRouter())
+        .environmentObject(OnboardingRouter())
 }

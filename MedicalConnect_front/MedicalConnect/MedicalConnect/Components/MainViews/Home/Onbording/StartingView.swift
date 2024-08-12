@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StartingView: View {
+    @StateObject private var onboardingManager = OnboardingManager()
     @State private var nextViewButton: Bool = false
     @State private var isLandscape: Bool = UIDevice.current.orientation.isLandscape
     var body: some View {

@@ -39,8 +39,8 @@ struct HashTagView: View {
                         .stroke(Color("babyBlue-300"), lineWidth: 1.0)
                     )
             )
-              
-
+            
+            
                Button("Agregar") {
                    if !addingLabels.isEmpty {
                        tags.append(addingLabels)

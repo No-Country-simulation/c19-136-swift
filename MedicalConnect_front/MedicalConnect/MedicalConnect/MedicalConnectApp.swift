@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct MedicalConnectApp: App {
     let routeManager = TabRouter()
+    let onboardingRouter = OnboardingRouter()
     var body: some Scene {
         WindowGroup {
             //StartingView()
@@ -17,6 +18,7 @@ struct MedicalConnectApp: App {
 //            MainTabView(router: TabRouter())
             MainTabView()
                 .environmentObject(routeManager)
+                .environmentObject(onboardingRouter)
           //  SignUpView()
 //            OnboardingView()
 //                .environmentObject(routeManager)

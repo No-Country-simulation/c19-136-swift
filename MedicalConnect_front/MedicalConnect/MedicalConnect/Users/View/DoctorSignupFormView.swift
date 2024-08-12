@@ -10,7 +10,6 @@ import SwiftUI
 struct DoctorSignupFormView: View {
     let user: User
     @ObservedObject var doctorManager = DoctorManager()
-    //@State private var totalHeight = CGFloat(80.00)
    
     @State var addingLabels: String = ""
     @State var tags: [String] = []
@@ -18,10 +17,14 @@ struct DoctorSignupFormView: View {
     
     @State private var totalHeight = CGFloat.zero
     var body: some View {
-//        NavigationStack {
+
+        
             UpperFrame(label: "Te pediremos algunos datos importantes")
             
+        
+        GeometryReader { geometry in
             ScrollView {
+                
                 
                 VStack(alignment: .leading, content: {
                     Text("¿Cuál es tu especialidad médica?")
@@ -44,27 +47,28 @@ struct DoctorSignupFormView: View {
                         .pickerStyle(.menu)
                         .tint(.black)
                     }
-                    
-          
                 })
-                .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+                .padding(EdgeInsets(top: geometry.size.height * 0.05, leading: 20, bottom: geometry.size.height * 0.05, trailing: 20))
                 
                 
                 TextFieldDataView(label: "Cédula Profesional", prompt: "Ingrese su cédula", keyboard: .asciiCapable, data: $doctorManager.doctor.professionalLicense)
-                    .padding(.bottom, 12)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: geometry.size.height * 0.05, trailing: 16))
                 
                 
                 BigFrameTextFieldView(label: "Escribe sobre tu experiencia", prompt: "Ginecóloga y obstetra como más de 5 años de experiencia, egresada de la Universidad de ...", keyboard: .asciiCapable, data: doctorManager.doctor.jobDescription)
-                    .padding(.bottom, -90)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: geometry.size.height * 0.05, trailing: 0))
                 
                 
-                VStack{
-                   
-                    HashTagView(addingLabels: $doctorManager.addingServiceLabels, tags: $doctorManager.doctor.services).padding(.horizontal, 16)
-                        .frame(height: 350)
-                }
+                
+                    TagView(services: $doctorManager.doctor.services, tagText: $doctorManager.addingServiceLabels)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: geometry.size.height * 0.05, trailing: 0))
                 
 
+                    
+//                    HashTagView(addingLabels: $doctorManager.addingServiceLabels, tags: $doctorManager.doctor.services).padding(.horizontal, 16)
+//
+                
+               
                 
                 
                 Button(action: {
@@ -80,10 +84,10 @@ struct DoctorSignupFormView: View {
                 .buttonStyle(MainButtonStyle(isEnabled: doctorManager.continueAccess))
                 .padding(.vertical, 12)
             }
-
-
+            .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+        }
+           
     }
-    
 }
 
 #Preview {

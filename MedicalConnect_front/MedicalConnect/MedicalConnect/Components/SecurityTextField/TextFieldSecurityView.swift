@@ -45,7 +45,7 @@ struct TextFieldSecurityView: View {
             
             }
         }
-        .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 10))
+    //    .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 10))
         .frame(maxWidth: .infinity, alignment: .leading)
 
     }
