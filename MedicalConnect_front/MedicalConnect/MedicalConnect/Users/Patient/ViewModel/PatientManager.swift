@@ -14,6 +14,7 @@ class PatientManager: ObservableObject {
     @Published var existAllergies : Allergies = .no
     @Published var continueAccess: Bool = false
     
+    let client = EConnectAPIClient()
     
     private var cancellables = Set<AnyCancellable>()
     init(
@@ -64,5 +65,19 @@ class PatientManager: ObservableObject {
     
     final func saveUserDataInPatient(userData: User){
         patient.user = userData
+        
+        
+        
+    }
+    
+    func sendPatientInfo() async {
+        do {
+            
+            try await client.sendData(endpoint: PostSignUpNewPatient(), object: patient)
+        } catch {
+            print(error)
+        }
+        
+        
     }
 }

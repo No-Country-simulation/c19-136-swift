@@ -80,6 +80,11 @@ struct PatientSignupFormView: View {
                         Button(action: {
                             patientManager.saveUserDataInPatient(userData: user)
                             print(patientManager.patient.user.name)
+                            
+                            Task {
+                                await patientManager.sendPatientInfo()
+                            }
+                            
                             print("Saving patient data...")
                         }, label: {
                             Text("Continuar")

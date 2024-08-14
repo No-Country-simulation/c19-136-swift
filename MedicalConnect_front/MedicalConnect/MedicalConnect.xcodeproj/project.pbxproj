@@ -47,6 +47,8 @@
 		707154762C58883F0044511C /* PatientDataFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707154752C58883F0044511C /* PatientDataFrameView.swift */; };
 		707154782C58B8C50044511C /* MenuProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707154772C58B8C50044511C /* MenuProfile.swift */; };
 		7071547A2C58BBE10044511C /* MyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707154792C58BBE10044511C /* MyMenu.swift */; };
+		70760D012C6B0C9000BE8B60 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70760D002C6B0C9000BE8B60 /* Request.swift */; };
+		70760D032C6B13C100BE8B60 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70760D022C6B13C100BE8B60 /* NetworkError.swift */; };
 		707CB50D2C684FD8004DF65B /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CB50C2C684FD8004DF65B /* OnboardingManager.swift */; };
 		70856FD12C584D96009C9B74 /* ScheduledAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70856FD02C584D96009C9B74 /* ScheduledAppointmentView.swift */; };
 		70856FD52C58523B009C9B74 /* BacgroundMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70856FD42C58523B009C9B74 /* BacgroundMessageView.swift */; };
@@ -84,6 +86,7 @@
 		70D9B5B22C56E7C000E507DD /* DoctorEvaluationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9B5B12C56E7C000E507DD /* DoctorEvaluationData.swift */; };
 		70D9B5B52C56F18D00E507DD /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9B5B42C56F18D00E507DD /* TestData.swift */; };
 		70F5D0B62C6433180073BCD6 /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5D0B52C6433180073BCD6 /* TabRouter.swift */; };
+		70F8D6B82C6D1BF4009AC396 /* EConnectAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8D6B72C6D1BF4009AC396 /* EConnectAPIClient.swift */; };
 		70FBEF432C54C2D2004FDA53 /* UserSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF422C54C2D1004FDA53 /* UserSignupFormView.swift */; };
 		70FBEF472C54C72B004FDA53 /* DoctorSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */; };
 		70FBEF492C54CA14004FDA53 /* PatientSignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */; };
@@ -139,6 +142,8 @@
 		707154752C58883F0044511C /* PatientDataFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientDataFrameView.swift; path = MedicalConnect/Users/Patient/View/PatientDataFrameView.swift; sourceTree = SOURCE_ROOT; };
 		707154772C58B8C50044511C /* MenuProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfile.swift; sourceTree = "<group>"; };
 		707154792C58BBE10044511C /* MyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenu.swift; sourceTree = "<group>"; };
+		70760D002C6B0C9000BE8B60 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		70760D022C6B13C100BE8B60 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		707CB50C2C684FD8004DF65B /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		70856FD02C584D96009C9B74 /* ScheduledAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduledAppointmentView.swift; path = MedicalConnect/Test_names/Payment/MedicalConnect/Test_names/Payment/View/ScheduledAppointmentView.swift; sourceTree = SOURCE_ROOT; };
 		70856FD42C58523B009C9B74 /* BacgroundMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacgroundMessageView.swift; sourceTree = "<group>"; };
@@ -176,6 +181,7 @@
 		70D9B5B12C56E7C000E507DD /* DoctorEvaluationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorEvaluationData.swift; sourceTree = "<group>"; };
 		70D9B5B42C56F18D00E507DD /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = MedicalConnect/Users/Doctor/Models/TestData.swift; sourceTree = SOURCE_ROOT; };
 		70F5D0B52C6433180073BCD6 /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabRouter.swift; path = MedicalConnect/Consult/Components/TabRouter.swift; sourceTree = SOURCE_ROOT; };
+		70F8D6B72C6D1BF4009AC396 /* EConnectAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EConnectAPIClient.swift; sourceTree = "<group>"; };
 		70FBEF422C54C2D1004FDA53 /* UserSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSignupFormView.swift; path = MedicalConnect/Users/UserSignupFormView.swift; sourceTree = SOURCE_ROOT; };
 		70FBEF462C54C72B004FDA53 /* DoctorSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSignupFormView.swift; sourceTree = "<group>"; };
 		70FBEF482C54CA14004FDA53 /* PatientSignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignupFormView.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 		702B376A2C54C160003BF42D /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				70F8D6B92C6D1CAF009AC396 /* ViewModel */,
 				707154722C5887C40044511C /* Components */,
 				703A4EE02C55CB8100ECA09B /* Models */,
 				702B376D2C54C17B003BF42D /* View */,
@@ -275,7 +282,6 @@
 				70FBEF4C2C54D007004FDA53 /* Allergies.swift */,
 				707154772C58B8C50044511C /* MenuProfile.swift */,
 				707154792C58BBE10044511C /* MyMenu.swift */,
-				7005D7922C5B6FE000F6C234 /* PatientManager.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -490,13 +496,10 @@
 		7087A1F32C59CC5700A3CEFB /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				70944E0B2C6C0351009B8B34 /* APIComponents */,
 				7087A1FA2C59D9BD00A3CEFB /* PatientEndpoints */,
 				7087A1FB2C59D9E600A3CEFB /* DoctorEndpoints */,
-				7087A1F42C59D5B400A3CEFB /* Endpoint.swift */,
-				7087A1F62C59D8CC00A3CEFB /* AppEnvironment.swift */,
-				7087A1F82C59D97900A3CEFB /* HTTPMethod.swift */,
-				7087A2002C5A09DD00A3CEFB /* Router.swift */,
-				7087A2022C5A17A600A3CEFB /* Parser.swift */,
+				70F8D6B72C6D1BF4009AC396 /* EConnectAPIClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -516,6 +519,21 @@
 			);
 			name = DoctorEndpoints;
 			path = Patient/MedicalConnect/APIClient/Patient/DoctorEndpoints;
+			sourceTree = "<group>";
+		};
+		70944E0B2C6C0351009B8B34 /* APIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7087A1F82C59D97900A3CEFB /* HTTPMethod.swift */,
+				7087A1F62C59D8CC00A3CEFB /* AppEnvironment.swift */,
+				7087A1F42C59D5B400A3CEFB /* Endpoint.swift */,
+				7087A2002C5A09DD00A3CEFB /* Router.swift */,
+				7087A2022C5A17A600A3CEFB /* Parser.swift */,
+				70760D022C6B13C100BE8B60 /* NetworkError.swift */,
+				70760D002C6B0C9000BE8B60 /* Request.swift */,
+			);
+			name = APIComponents;
+			path = ../Navigation/APIComponents;
 			sourceTree = "<group>";
 		};
 		7097070E2C5D498800CE5376 /* Consult */ = {
@@ -579,6 +597,14 @@
 				70D9B5B42C56F18D00E507DD /* TestData.swift */,
 			);
 			path = Test_names;
+			sourceTree = "<group>";
+		};
+		70F8D6B92C6D1CAF009AC396 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7005D7922C5B6FE000F6C234 /* PatientManager.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		70FBEF442C54C6AE004FDA53 /* Doctor */ = {
@@ -696,6 +722,7 @@
 				70FBEF492C54CA14004FDA53 /* PatientSignupFormView.swift in Sources */,
 				70FBEF4F2C54D19B004FDA53 /* BigFrameTextFieldView.swift in Sources */,
 				70205E262C58CDB800B7381B /* MyMedicalRecordsHistory.swift in Sources */,
+				70F8D6B82C6D1BF4009AC396 /* EConnectAPIClient.swift in Sources */,
 				70C726452C5ABCBA009FB7B0 /* DataManager.swift in Sources */,
 				709707182C5D59B000CE5376 /* AppointmenManager.swift in Sources */,
 				70D9B5B52C56F18D00E507DD /* TestData.swift in Sources */,
@@ -733,6 +760,7 @@
 				702B37552C546911003BF42D /* TextFieldDataView.swift in Sources */,
 				70FBEF4D2C54D007004FDA53 /* Allergies.swift in Sources */,
 				703A4EE72C55D97A00ECA09B /* DoctorServicesCardView.swift in Sources */,
+				70760D012C6B0C9000BE8B60 /* Request.swift in Sources */,
 				70C726402C5AA002009FB7B0 /* Route.swift in Sources */,
 				7087A2032C5A17A600A3CEFB /* Parser.swift in Sources */,
 				70856FD12C584D96009C9B74 /* ScheduledAppointmentView.swift in Sources */,
@@ -763,6 +791,7 @@
 				70D9B5AE2C56C0D700E507DD /* DoctorReviewCardView.swift in Sources */,
 				7097071D2C5D63B600CE5376 /* Appointment.swift in Sources */,
 				702B37512C54581A003BF42D /* MainButtonStyle.swift in Sources */,
+				70760D032C6B13C100BE8B60 /* NetworkError.swift in Sources */,
 				70D9B5B02C56D2ED00E507DD /* Review.swift in Sources */,
 				70FBEF472C54C72B004FDA53 /* DoctorSignupFormView.swift in Sources */,
 				7087304B2C6982650020FE35 /* TagView.swift in Sources */,

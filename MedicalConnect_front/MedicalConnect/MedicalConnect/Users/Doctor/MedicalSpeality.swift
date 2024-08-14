@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MedicalSpeality: String, CaseIterable {
+enum MedicalSpeality: String, CaseIterable, Codable {
     case cardiology = "Cardiología"
      case dermatology = "Dermatología"
      case endocrinology = "Endocrinología"

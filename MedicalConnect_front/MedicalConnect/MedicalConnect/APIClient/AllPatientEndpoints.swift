@@ -56,7 +56,7 @@ struct GetAllPatientsByGenderEndpoint: Endpoint {
 
 
 struct PostSignUpNewPatient: Endpoint {
-    var path: String
+    var path: String = "/users/patients"
     var method: HTTPMethod = .POST
     var query: [URLQueryItem] = [URLQueryItem(name: "", value: "")]
     

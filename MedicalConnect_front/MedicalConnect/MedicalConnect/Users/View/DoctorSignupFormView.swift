@@ -63,12 +63,6 @@ struct DoctorSignupFormView: View {
                     TagView(services: $doctorManager.doctor.services, tagText: $doctorManager.addingServiceLabels)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: geometry.size.height * 0.05, trailing: 0))
                 
-
-                    
-//                    HashTagView(addingLabels: $doctorManager.addingServiceLabels, tags: $doctorManager.doctor.services).padding(.horizontal, 16)
-//
-                
-               
                 
                 
                 Button(action: {

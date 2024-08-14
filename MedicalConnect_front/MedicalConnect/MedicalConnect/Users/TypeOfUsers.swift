@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum TypeOfUsers: String, CaseIterable {
+enum TypeOfUsers: String, CaseIterable, Codable {
     case patient = "Paciente"
     case doctor = "Doctor"
 }

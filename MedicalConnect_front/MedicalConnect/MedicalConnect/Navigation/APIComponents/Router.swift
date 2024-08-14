@@ -18,13 +18,19 @@ class Router {
     
     func routedEndpoint(_ endpoint: Endpoint, url : AppEnvironment.Base) -> URL? {
        
-        var baseURL = environment.getURL(api: url)
+        let baseURL = environment.getURL(api: url)
         
         var components = URLComponents(string: baseURL)
         
         components?.path = endpoint.path
         components?.queryItems = endpoint.query
+        
+
         return components?.url
     }
     
 }
+
+
+//
+
